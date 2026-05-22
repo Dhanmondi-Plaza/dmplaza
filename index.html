@@ -45,27 +45,57 @@
   .nav-ig:hover svg{stroke:var(--gold)}
   .nav-cta{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:9px 20px;border-radius:2px;text-decoration:none}
 
-  /* HERO */
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border-light)}
-  .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border-light) 1px,transparent 1px),linear-gradient(90deg,var(--border-light) 1px,transparent 1px);background-size:80px 80px;opacity:.6}
-  .hero-glow{position:absolute;top:30%;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,160,80,0.06) 0%,transparent 70%);pointer-events:none}
-  .hero-eyebrow{font-size:10px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:14px;opacity:.8}
-  .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.6}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,8vw,100px);font-weight:300;line-height:.92;letter-spacing:-.01em;color:var(--cream);margin-bottom:12px}
-  h1 em{font-style:italic;color:var(--gold)}
-  .hero-address{font-size:13px;font-weight:300;letter-spacing:.15em;color:var(--mid);margin-bottom:36px;text-transform:uppercase}
-  .hero-desc{font-size:18px;font-weight:300;line-height:1.9;color:var(--mid);max-width:540px;margin-bottom:48px}
-  .hero-desc strong{color:var(--light);font-weight:400}
-  .hero-actions{display:flex;gap:20px;align-items:center}
-  .btn-gold{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:15px 34px;border-radius:2px;text-decoration:none;transition:background .2s}
-  .btn-gold:hover{background:var(--gold-light)}
-  .btn-outline{font-size:12px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:8px;transition:gap .2s}
-  .btn-outline:hover{gap:14px}
-  .btn-outline::after{content:'→'}
+/* BATCH 1: Hero — mobile fixes */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+    align-items: center;
+    text-align: center;
+  }
 
-  .hero-brand{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
-  .hero-brand-dm{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,80px);font-weight:600;color:var(--cream);line-height:1;letter-spacing:-.02em}
-  .hero-brand-plaza{font-family:'Outfit',sans-serif;font-size:clamp(20px,3vw,36px);font-weight:200;color:var(--gold);letter-spacing:.6em;text-transform:uppercase}
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-brand-dm {
+    font-size: clamp(36px, 12vw, 56px);
+  }
+
+  .hero-brand-plaza {
+    font-size: clamp(13px, 4vw, 20px);
+    letter-spacing: .4em;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .btn-gold {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
 
   /* BUSINESSES */
   .businesses{padding:100px 0}
@@ -623,7 +653,7 @@
 
       <div>
         <div class="section-eyebrow">Why Dhanmondi</div>
-        <h2>A neighborhood<br>in <em>Dhaka.</em><br>A name in <em>Queens.</em></h2>
+        <h2>A neighborhood<br>in <em>Dhaka.</em><br>Reinvented in <em>Queens.</em></h2>
       </div>
 
       <div>
@@ -631,7 +661,7 @@
 
         <p style="font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:16px;">Dhanmondi — from <em style="color:var(--light);">dhan</em> (paddy, grain) and <em style="color:var(--light);">mandi</em> (market) — is one of Dhaka's most beloved neighborhoods. Tree-lined streets, lakeside cafés, art galleries, and the kinds of conversations that shaped modern Bangladesh. It became a gathering place for intellectuals, artists, and families who built the country's cultural identity.</p>
 
-        <p style="font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:16px;">It's also where this family is from.</p>
+        <p style="font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:16px;">It's our co-founder Saima is from.</p>
 
         <p style="font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);">Naming this plaza after Dhanmondi is a deliberate act of memory — and of ambition. We're bringing its spirit to Hillside Avenue: the idea that a neighborhood can be a destination, that commerce and culture can share a building, and that a community deserves something built with care and intention.</p>
 
@@ -736,7 +766,7 @@
           </div>
           <div class="fly-item">
             <div class="fly-num">07</div>
-            <div class="fly-text"><strong>Dedicated apps</strong> for each concept enable online ordering, pre-pay, in-store pickup, in-app promotions, and cross-concept recommendations — one customer, multiple touchpoints.</div>
+            <div class="fly-text"><strong>Dedicated apps</strong> for each concept enable online ordering, rewards, in-app promotions, and cross-concept recommendations — one customer, multiple touchpoints.</div>
           </div>
         </div>
       </div>
