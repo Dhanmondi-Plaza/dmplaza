@@ -45,11 +45,20 @@
   .nav-ig:hover svg{stroke:var(--gold)}
   .nav-cta{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:9px 20px;border-radius:2px;text-decoration:none}
 
-/* BATCH 1: Hero — mobile fixes */
+/* BATCH 1: Hero — responsive fixes */
+
+/* Desktop / global hero CTA cleanup */
+.hero-actions .btn-gold,
+.hero-actions .btn-outline {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile only */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 100px 0 60px;
+    padding: 104px 20px 64px;
     align-items: center;
     text-align: center;
   }
@@ -61,24 +70,47 @@
   .hero-brand {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 4px;
+    margin-bottom: 18px;
   }
 
   .hero-brand-dm {
-    font-size: clamp(36px, 12vw, 56px);
+    font-size: clamp(38px, 13vw, 58px);
+    line-height: .9;
   }
 
   .hero-brand-plaza {
-    font-size: clamp(13px, 4vw, 20px);
-    letter-spacing: .4em;
+    font-size: clamp(13px, 4vw, 19px);
+    letter-spacing: .36em;
+    line-height: 1;
   }
 
+  .hero h1,
   h1 {
-    font-size: clamp(36px, 10vw, 56px);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(42px, 11vw, 60px);
+    line-height: .94;
+    max-width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 em,
+  h1 em {
+    font-style: italic;
+  }
+
+  .hero-address {
+    font-size: 12px;
+    letter-spacing: .16em;
   }
 
   .hero-desc {
     font-size: 16px;
+    line-height: 1.72;
+    max-width: 92vw;
     margin-left: auto;
     margin-right: auto;
   }
@@ -86,46 +118,24 @@
   .hero-actions {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 14px;
     width: 100%;
   }
 
-  .btn-gold {
+  .hero-actions .btn-gold,
+  .hero-actions .btn-outline {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
+    justify-content: center;
     text-align: center;
   }
-}
-/* BATCH 1 — addendum: font + button fixes */
-@media (max-width: 768px) {
 
-  /* Force Cormorant back — something is stripping font-family on mobile */
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(40px, 11vw, 60px);
-    line-height: .94;
-  }
-
-  h1 em {
-    font-style: italic;
-  }
-
-  /* Nuke browser anchor defaults bleeding through on mobile */
-  .btn-gold,
-  .btn-outline {
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .btn-gold {
-    display: block;
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
+  .hero-actions .btn-gold {
+    display: flex;
     color: var(--black);
     background: var(--gold);
-    padding: 15px 34px;
+    padding: 15px 28px;
     border-radius: 2px;
     font-size: 12px;
     font-weight: 500;
@@ -133,16 +143,14 @@
     text-transform: uppercase;
   }
 
-  .btn-outline {
+  .hero-actions .btn-outline {
     display: flex;
-    justify-content: center;
     color: var(--gold);
     font-size: 12px;
     font-weight: 300;
     letter-spacing: .14em;
     text-transform: uppercase;
   }
-
 }
   /* BUSINESSES */
   .businesses{padding:100px 0}
