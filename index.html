@@ -96,7 +96,54 @@
     text-align: center;
   }
 }
+/* BATCH 1 — addendum: font + button fixes */
+@media (max-width: 768px) {
 
+  /* Force Cormorant back — something is stripping font-family on mobile */
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 11vw, 60px);
+    line-height: .94;
+  }
+
+  h1 em {
+    font-style: italic;
+  }
+
+  /* Nuke browser anchor defaults bleeding through on mobile */
+  .btn-gold,
+  .btn-outline {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-gold {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    color: var(--black);
+    background: var(--gold);
+    padding: 15px 34px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .btn-outline {
+    display: flex;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+}
   /* BUSINESSES */
   .businesses{padding:100px 0}
   .section-eyebrow{font-size:11px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;opacity:.8}
