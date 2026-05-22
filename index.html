@@ -324,7 +324,12 @@
   /* ── GLOBAL OVERFLOW LOCK ── */
   html { overflow-x: hidden; max-width: 100vw; }
   body { overflow-x: hidden; }
-  section, .container, nav, footer { max-width: 100%; }
+  section, nav, footer { max-width: 100%; }
+ .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
   .hero { overflow: hidden; }
   .ecosystem { overflow: hidden; }
 
