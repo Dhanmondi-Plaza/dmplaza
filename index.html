@@ -282,8 +282,8 @@
   /* ── ECO HUB DIAGRAM ── */
   .eco-hub-wrap{position:relative;width:100%;max-width:520px;height:500px;margin:0 auto}
   .eco-lines-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  .eco-hub-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:145px;height:108px;background:#0d0d0d;border:1.5px solid rgba(201,160,80,0.75);border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,160,80,0.14);z-index:2}
-  .eco-hub-node{position:absolute;width:134px;height:92px;background:#1a1a1a;border:1px solid rgba(201,160,80,0.32);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;text-align:center;transition:border-color .2s,box-shadow .2s;z-index:2;overflow:hidden}
+  .eco-hub-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:158px;height:118px;background:#0d0d0d;border:1.5px solid rgba(201,160,80,0.75);border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(201,160,80,0.14);z-index:2}
+  .eco-hub-node{position:absolute;width:150px;height:110px;background:#1a1a1a;border:1px solid rgba(201,160,80,0.32);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;text-align:center;transition:border-color .2s,box-shadow .2s;z-index:2;overflow:hidden}
   .eco-hub-node:hover{border-color:rgba(201,160,80,0.75);box-shadow:0 0 14px rgba(201,160,80,0.18)}
   .eco-node-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,160,80,0.55);line-height:1.3}
 
@@ -368,6 +368,7 @@
   .mobile-menu {
     position: fixed;
     inset: 0;
+    overflow-x: hidden;
     background: rgba(8,8,8,0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -389,12 +390,12 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     margin-bottom: 8px;
   }
   .mobile-nav-link {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 300;
     color: var(--cream);
     text-decoration: none;
@@ -483,14 +484,6 @@
   }
 
   @media(max-width:500px) {
-    /* smaller scale on phones */
-    .eco-hub-wrap {
-      transform: scale(0.56);
-      transform-origin: top center;
-      height: 420px;
-      margin-bottom: -185px;
-    }
-
     /* single column for small phones */
     .partner-cats { grid-template-columns: 1fr; }
     .bts-tiles { grid-template-columns: 1fr; }
@@ -508,6 +501,28 @@
 
     /* section headings */
     h2 { font-size: clamp(28px, 8vw, 52px); }
+  }
+
+
+  /* ── DHANMONDI SECTION ── */
+  .dhanmondi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  @media(max-width:768px){
+    .dhanmondi-inner{grid-template-columns:1fr;gap:36px}
+  }
+
+
+  /* ── ECO MOBILE DIAGRAM ── */
+  .eco-mobile-wrap{display:none;margin-top:0}
+  .eco-mobile-center-node{background:#0d0d0d;border:1.5px solid rgba(201,160,80,0.7);border-radius:4px;display:flex;align-items:center;justify-content:center;padding:16px;margin-bottom:2px;box-shadow:0 0 20px rgba(201,160,80,0.1)}
+  .eco-mobile-nodes-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .eco-mobile-node{background:#1a1a1a;border:1px solid rgba(201,160,80,0.3);border-radius:2px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;transition:border-color .2s}
+  .eco-mobile-node:hover{border-color:rgba(201,160,80,0.65)}
+  .eco-mobile-node.full-width{grid-column:1/-1}
+  @media(max-width:768px){
+    .eco-hub-wrap{display:none!important}
+    .eco-mobile-wrap{display:block}
+    /* undo old scale hack */
+    .eco-hub-wrap{transform:none;margin-bottom:0}
   }
 
 </style>
@@ -642,44 +657,6 @@
   </div>
 </section>
 
-<!-- VISION -->
-<section class="vision" id="vision">
-  <div class="container">
-    <div class="vision-inner">
-      <div class="vision-text">
-        <div class="section-eyebrow">Why we built this</div>
-        <h2>Not five businesses.<br><em>One system.</em></h2>
-        <p>DM Plaza isn't a collection of tenants. It's an integrated ecosystem — five businesses that share customers, data, and infrastructure under one roof on Hillside Avenue.</p>
-        <p>A customer who eats at Desi Dragon, shops at Nature's Bazaar, books Meridian Hill for their walima, and visits Top Level on a Saturday evening — that's a relationship no standalone business can build. That's the point of DM Plaza.</p>
-        <p style="margin-top:14px;">Built by a Bangladeshi family. Built for this community. Built to last.</p>
-      </div>
-      <div class="vision-pillars">
-        <div class="vpillar">
-          <div class="vpillar-num">01</div>
-          <div class="vpillar-title">Shared customers</div>
-          <div class="vpillar-desc">One CRM. Every touchpoint across all five businesses builds a single relationship.</div>
-        </div>
-        <div class="vpillar">
-          <div class="vpillar-num">02</div>
-          <div class="vpillar-title">Integrated operations</div>
-          <div class="vpillar-desc">Nature's Bazaar supplies Desi Dragon. Desi Dragon caters Meridian Hill. The dumbwaiter connects every floor.</div>
-        </div>
-        <div class="vpillar">
-          <div class="vpillar-num">03</div>
-          <div class="vpillar-title">Community rooted</div>
-          <div class="vpillar-desc">25 years of serving Queens through Saireen Medical Group. DM Plaza extends that commitment to the whole block.</div>
-        </div>
-        <div class="vpillar">
-          <div class="vpillar-num">04</div>
-          <div class="vpillar-title">Tech-enabled</div>
-          <div class="vpillar-desc">Automation, AI, and shared systems running beneath every business. Built to scale and replicate.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ECOSYSTEM -->
 <section class="ecosystem" id="ecosystem">
   <div class="container">
@@ -745,51 +722,88 @@
 
           <!-- Center: DM Plaza -->
           <div class="eco-hub-center">
-            <img id="eco-logo-dm" style="height:62px;width:auto;mix-blend-mode:lighten;" alt="">
+            <img id="eco-logo-dm" style="height:76px;width:auto;mix-blend-mode:lighten;" alt="">
           </div>
 
           <!-- Meridian Hill — top center -->
-          <div class="eco-hub-node" style="top:14px;left:193px;">
-            <img id="eco-logo-mh" style="height:42px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
+          <div class="eco-hub-node" style="top:5px;left:185px;">
+            <img id="eco-logo-mh" style="height:62px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
             <span class="eco-node-label">Events · Floors 2–3</span>
           </div>
 
           <!-- Nature's Bazaar — upper right -->
-          <div class="eco-hub-node" style="top:119px;left:353px;">
-            <img id="eco-logo-nb" style="height:42px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
+          <div class="eco-hub-node" style="top:110px;left:345px;">
+            <img id="eco-logo-nb" style="height:62px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
             <span class="eco-node-label">Grocery · Floor 1</span>
           </div>
 
           <!-- Top Level — lower right -->
-          <div class="eco-hub-node" style="top:364px;left:293px;">
-            <img id="eco-logo-tl" style="height:42px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
+          <div class="eco-hub-node" style="top:355px;left:285px;">
+            <img id="eco-logo-tl" style="height:62px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
             <span class="eco-node-label">Wellness · Floor 4</span>
           </div>
 
           <!-- Desi Dragon — lower left -->
-          <div class="eco-hub-node" style="top:364px;left:93px;">
-            <img id="eco-logo-dd" style="height:42px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
+          <div class="eco-hub-node" style="top:355px;left:85px;">
+            <img id="eco-logo-dd" style="height:62px;width:auto;mix-blend-mode:lighten;max-width:118px;" alt="">
             <span class="eco-node-label">Restaurant · Cellar</span>
           </div>
 
           <!-- Pearl & Leaf — upper left -->
-          <div class="eco-hub-node" style="top:119px;left:33px;">
-            <img id="eco-logo-pl" style="height:42px;width:auto;max-width:118px;" alt="">
+          <div class="eco-hub-node" style="top:110px;left:25px;">
+            <img id="eco-logo-pl" style="height:62px;width:auto;max-width:118px;" alt="">
             <span class="eco-node-label">Beverages · Floor 1</span>
           </div>
         </div>
 
         <script>
         (function(){
-          var map = {'dm':'DM Plaza','mh':'Meridian Hill','nb':"Nature",'tl':'Top Level','dd':'Desi Dragon','pl':'Pearl'};
-          var imgs = Array.from(document.querySelectorAll('img[alt][src^="data:image"]'));
-          Object.keys(map).forEach(function(id){
-            var key = map[id];
-            var found = imgs.find(function(i){ return i.alt && i.alt.indexOf(key) !== -1 && i.id !== 'eco-logo-'+id; });
-            if(found){ var el = document.getElementById('eco-logo-'+id); if(el) el.src = found.src; }
-          });
-        })();
+  var map = {'dm':'DM Plaza','mh':'Meridian Hill','nb':'Nature','tl':'Top Level','dd':'Desi Dragon','pl':'Pearl'};
+  var imgs = Array.from(document.querySelectorAll('img[alt][src^="data:image"]'));
+
+  Object.keys(map).forEach(function(id){
+    var key = map[id];
+    var found = imgs.find(function(i){ return i.alt && i.alt.indexOf(key) !== -1 && i.id !== 'eco-logo-'+id; });
+    if(found){ var el = document.getElementById('eco-logo-'+id); if(el) el.src = found.src; }
+  });
+
+  // Populate mobile eco logo imgs by data-key
+  document.querySelectorAll('.eco-m-logo[data-key]').forEach(function(img){
+    var key = img.dataset.key;
+    var found = imgs.find(function(i){ return i.alt && i.alt.indexOf(key) !== -1 && !i.classList.contains('eco-m-logo'); });
+    if(found) img.src = found.src;
+  });
+})();
         </script>
+
+        <!-- Mobile eco diagram (replaces hub on small screens) -->
+        <div class="eco-mobile-wrap">
+          <div class="eco-mobile-center-node">
+            <img class="eco-m-logo" data-key="DM Plaza" style="height:64px;width:auto;mix-blend-mode:lighten;" alt="DM Plaza">
+          </div>
+          <div class="eco-mobile-nodes-grid">
+            <div class="eco-mobile-node">
+              <img class="eco-m-logo" data-key="Meridian Hill" style="height:46px;width:auto;mix-blend-mode:lighten;max-width:110px;" alt="">
+              <span class="eco-node-label">Events · Floors 2–3</span>
+            </div>
+            <div class="eco-mobile-node">
+              <img class="eco-m-logo" data-key="Nature" style="height:46px;width:auto;mix-blend-mode:lighten;max-width:110px;" alt="">
+              <span class="eco-node-label">Grocery · Floor 1</span>
+            </div>
+            <div class="eco-mobile-node">
+              <img class="eco-m-logo" data-key="Desi Dragon" style="height:46px;width:auto;mix-blend-mode:lighten;max-width:110px;" alt="">
+              <span class="eco-node-label">Restaurant · Cellar</span>
+            </div>
+            <div class="eco-mobile-node">
+              <img class="eco-m-logo" data-key="Pearl" style="height:46px;width:auto;max-width:110px;" alt="">
+              <span class="eco-node-label">Beverages · Floor 1</span>
+            </div>
+            <div class="eco-mobile-node full-width">
+              <img class="eco-m-logo" data-key="Top Level" style="height:46px;width:auto;mix-blend-mode:lighten;max-width:150px;" alt="">
+              <span class="eco-node-label">Wellness · Floor 4</span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -797,10 +811,48 @@
 </section>
 
 
-<!-- DHANMONDI -->
+<!-- DHANMONDI --><!-- VISION -->
+<section class="vision" id="vision">
+  <div class="container">
+    <div class="vision-inner">
+      <div class="vision-text">
+        <div class="section-eyebrow">Why we built this</div>
+        <h2>Not five businesses.<br><em>One system.</em></h2>
+        <p>DM Plaza isn't a collection of tenants. It's an integrated ecosystem — five businesses that share customers, data, and infrastructure under one roof on Hillside Avenue.</p>
+        <p>A customer who eats at Desi Dragon, shops at Nature's Bazaar, books Meridian Hill for their walima, and visits Top Level on a Saturday evening — that's a relationship no standalone business can build. That's the point of DM Plaza.</p>
+        <p style="margin-top:14px;">Built by a Bangladeshi family. Built for this community. Built to last.</p>
+      </div>
+      <div class="vision-pillars">
+        <div class="vpillar">
+          <div class="vpillar-num">01</div>
+          <div class="vpillar-title">Shared customers</div>
+          <div class="vpillar-desc">One CRM. Every touchpoint across all five businesses builds a single relationship.</div>
+        </div>
+        <div class="vpillar">
+          <div class="vpillar-num">02</div>
+          <div class="vpillar-title">Integrated operations</div>
+          <div class="vpillar-desc">Nature's Bazaar supplies Desi Dragon. Desi Dragon caters Meridian Hill. The dumbwaiter connects every floor.</div>
+        </div>
+        <div class="vpillar">
+          <div class="vpillar-num">03</div>
+          <div class="vpillar-title">Community rooted</div>
+          <div class="vpillar-desc">25 years of serving Queens through Saireen Medical Group. DM Plaza extends that commitment to the whole block.</div>
+        </div>
+        <div class="vpillar">
+          <div class="vpillar-num">04</div>
+          <div class="vpillar-title">Tech-enabled</div>
+          <div class="vpillar-desc">Automation, AI, and shared systems running beneath every business. Built to scale and replicate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <section style="padding:100px 0;border-top:1px solid var(--border-light);">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="dhanmondi-inner">
 
       <div>
         <div class="section-eyebrow">Why Dhanmondi</div>
@@ -950,108 +1002,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- LOCATION -->
-<section class="location" id="location">
-  <div class="container">
-    <div class="section-eyebrow">Visit us</div>
-    <h2>167-14 Hillside Ave.<br><em>Jamaica, Queens.</em></h2>
-
-    <div style="margin-bottom:56px;">
-      <div class="section-eyebrow" style="margin-bottom:20px;">Floor by floor</div>
-      <div class="building-diagram">
-        <div class="bd-sidebar">
-          <div class="bd-floor-label">FL 4</div>
-          <div class="bd-floor-label">FL 3</div>
-          <div class="bd-floor-label">FL 2</div>
-          <div class="bd-floor-label" style="border-top:2px solid rgba(201,160,80,0.3);">FL 1<br><span style="font-size:6px;letter-spacing:.1em;color:rgba(201,160,80,0.5);">GROUND</span></div>
-          <div class="bd-floor-label" style="background:rgba(0,0,0,.2);">CELLAR</div>
-        </div>
-        <div class="bd-building">
-          <div class="bd-floor bd-tluc">
-            <div class="bd-floor-info">
-              <div class="bd-floor-name">Top Level Urgent Care</div>
-              <div class="bd-floor-fn">Walk-in care · Evening &amp; weekend hours · 4 languages</div>
-            </div>
-            <div class="bd-floor-sf">2,575 sq ft</div>
-          </div>
-          <div class="bd-floor bd-mh3">
-            <div class="bd-floor-info">
-              <div class="bd-floor-name">Meridian Hill — Upper</div>
-              <div class="bd-floor-fn">Events, programming, private dining · 150 guests per floor</div>
-            </div>
-            <div class="bd-floor-sf">5,085 sq ft<br><span style="font-size:9px;color:var(--mid);">combined</span></div>
-          </div>
-          <div class="bd-floor bd-mh2">
-            <div class="bd-floor-info">
-              <div class="bd-floor-name">Meridian Hill — Lower</div>
-              <div class="bd-floor-fn">Flexible layout · Private patio access · In-house catering</div>
-            </div>
-            <div class="bd-floor-sf" style="opacity:0;pointer-events:none;">—</div>
-          </div>
-          <div class="bd-floor bd-nb">
-            <div class="bd-floor-info">
-              <div class="bd-floor-name">Nature's Bazaar + Pearl &amp; Leaf</div>
-              <div class="bd-floor-fn">Specialty grocery · Halal butcher · Grab-and-go beverages</div>
-            </div>
-            <div class="bd-floor-sf">3,580 sq ft</div>
-          </div>
-          <div class="bd-floor bd-dd">
-            <div class="bd-floor-info">
-              <div class="bd-floor-name">Desi Dragon</div>
-              <div class="bd-floor-fn">Indo-Chinese restaurant · Lounge · Non-alcoholic bar · Catering</div>
-            </div>
-            <div class="bd-floor-sf">3,900 sq ft</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:48px;" class="loc-inner">
-      <div>
-        <a href="https://maps.google.com/?q=167-14+Hillside+Ave+Jamaica+Queens+NY+11432" target="_blank" class="loc-map">
-          <div class="map-pin"></div>
-          <div class="map-label">Open in Google Maps</div>
-        </a>
-      </div>
-      <div class="loc-details">
-        <div class="loc-item">
-          <div class="loc-label">Address</div>
-          <div class="loc-value">DM Plaza · 167-14 Hillside Ave<br>Jamaica, Queens, NY 11432<br>Elevator accessible · All floors</div>
-        </div>
-        <div class="loc-item">
-          <div class="loc-label">Subway</div>
-          <div class="loc-value">
-            <div class="transit-row">
-              <span class="f-badge">F</span>
-              <span>169 St — entrance right on the block</span>
-            </div>
-          </div>
-        </div>
-        <div class="loc-item">
-          <div class="loc-label">Bus — Hillside Ave</div>
-          <div class="loc-value">
-            <div class="transit-row">
-              <span class="bus-badge">Q1</span><span class="bus-badge">Q36</span><span class="bus-badge">Q43</span><span class="bus-badge">Q82</span>
-              <span style="font-size:12px;font-weight:300;color:var(--mid);width:100%;margin-top:4px;">Direct service on Hillside Ave · 168th–169th St stop</span>
-            </div>
-          </div>
-        </div>
-        <div class="loc-item">
-          <div class="loc-label">Languages</div>
-          <div class="loc-value">English · Bengali · Urdu · Tagalog<br><span style="font-size:12px;color:var(--mid);">আমরা বাংলায় কথা বলি</span></div>
-        </div>
-        <div class="loc-item">
-          <div class="loc-label">Parking</div>
-          <div class="loc-value">Private parking on-site · Valet available<br><span style="font-size:12px;color:var(--mid);">For events at Meridian Hill and evening dining</span></div>
-        </div>
-        <div class="loc-item">
-          <div class="loc-label">Opening</div>
-          <div class="loc-value">Summer 2026 · Accepting inquiries now<br><span style="font-size:12px;color:var(--mid);">Meridian Hill events booking for Fall 2026+</span></div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
