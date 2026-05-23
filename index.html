@@ -573,13 +573,16 @@
     z-index: 45;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 210px 32px 48px;
+    padding: 260px 32px 48px;
     transform: translateY(-100%);
     transition: transform .38s cubic-bezier(.4,0,.2,1);
     overflow-y: auto;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-overflow-scrolling: touch;
+   
   }
   .mobile-menu.is-open { transform: translateY(0); }
 
@@ -613,7 +616,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 32px;
+    margin-top: 24px;
   }
   .mobile-ig-link {
     display: inline-flex;
