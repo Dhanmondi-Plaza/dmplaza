@@ -1501,10 +1501,23 @@
       <div class="section-eyebrow" style="justify-content:center;">Stay connected</div>
       <h2>Opening Summer 2026.<br><em>Be the first to know.</em></h2>
       <p>Get notified when DM Plaza opens — and stay updated on each business, events, and what's happening on Hillside Avenue.</p>
-      <div class="nform">
-        <input type="email" id="dm-email" placeholder="your@email.com">
-        <button onclick="handleNotify()">Stay in touch</button>
-      </div>
+     <form
+  action="https://formspree.io/f/xaqkjzkq"
+  method="POST"
+  class="nform"
+>
+  <input
+    type="email"
+    name="email"
+    id="dm-email"
+    placeholder="your@email.com"
+    required
+  >
+
+  <input type="hidden" name="source" value="DM Plaza Notify Section">
+
+  <button type="submit">Stay in touch</button>
+</form>
       <div class="nsuccess" id="dm-success">You're on the list. We'll see you on Hillside Ave.</div>
       <p style="font-size:11px;font-weight:300;color:var(--mid);margin-top:12px;">For event inquiries: <a href="mailto:info@dhanmondiplaza.com" style="color:var(--gold);text-decoration:none;">info@dhanmondiplaza.com</a></p>
 
