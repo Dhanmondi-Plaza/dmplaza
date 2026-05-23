@@ -565,11 +565,12 @@
   /* ── MOBILE MENU OVERLAY ── */
   .mobile-menu {
   position: fixed;
-  top: 140px;
+  top: 172px;
   left: 0;
   right: 0;
   bottom: 0;
   overflow-x: hidden;
+  overflow-y: auto;
   background: rgba(8,8,8,0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -578,7 +579,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 24px 32px 48px;
+  padding: 28px 32px 40px;
+  transform: translateY(-110%);
+  transition: transform .38s cubic-bezier(.4,0,.2,1);
+  -webkit-overflow-scrolling: touch;
 }
   .mobile-menu.is-open { transform: translateY(0); }
 
@@ -588,7 +592,7 @@
     align-items: center;
     width: 100%;
     max-width: 320px;
-    margin-bottom: 0px;
+    margin: 0 auto;
   }
   .mobile-nav-link {
     font-family: 'Cormorant Garamond', serif;
