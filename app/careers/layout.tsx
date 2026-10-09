@@ -1,4 +1,5 @@
 import '../../features/careers.css';
 import '../../features/careers-directory.css';
+import '../../features/careers-job.css';
 export const metadata={title:'Careers | DM Plaza',description:'Explore opportunities at Dhanmondi Plaza in Jamaica, Queens.'};
 export default function Layout({children}:{children:React.ReactNode}){return <div className="careers-shell"><header className="jobs-header"><a href="/careers" aria-label="DM Plaza careers"><img src="/brands/dm-plaza/logo.png" alt="DM Plaza"/></a><nav><a href="/careers">Open roles</a><a href="https://dhanmondiplaza.com">Visit DM Plaza ↗</a></nav></header><main className="jobs-content">{children}</main><footer className="jobs-footer"><span>DM PLAZA · Jamaica, Queens</span><a href="/careers/privacy">Applicant privacy notice</a><a href="/careers/admin">Hiring team sign-in</a></footer></div>}

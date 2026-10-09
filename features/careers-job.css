@@ -1,0 +1,13 @@
+.jobs-role-copy{white-space:normal;min-width:0;font-size:16px;line-height:1.6}
+.jobs-role-copy>h2{margin:34px 0 13px}
+.jobs-role-copy>h2:first-of-type{margin-top:28px}
+.jobs-role-copy .jobs-reports-to{margin:0 0 12px;color:#52636c;font-size:14px}
+.jobs-role-text p{margin:0 0 15px}
+.jobs-role-text .jobs-role-lead{margin:3px 0 9px}
+.careers-shell .jobs-role-text h3{margin:24px 0 9px;color:#102d40;font-family:var(--font-body),Arial,sans-serif;font-size:17px;font-weight:700;line-height:1.35}
+.jobs-role-text h3:first-child{margin-top:0}
+.jobs-role-text ul{margin:0 0 19px;padding-left:23px;list-style:disc}
+.jobs-role-text li{margin:0 0 8px;padding-left:3px;line-height:1.55}
+.jobs-role-text li::marker{color:#80632f}
+@media(max-width:900px){.jobs-role{grid-template-columns:1fr}}
+@media(max-width:760px){.jobs-role{gap:26px}.jobs-role-copy{font-size:16px;line-height:1.55}.jobs-role-copy>h2{margin-top:29px;margin-bottom:11px}.careers-shell .jobs-role-text h3{font-size:16px;margin-top:22px}.jobs-role-text li{margin-bottom:7px}}
