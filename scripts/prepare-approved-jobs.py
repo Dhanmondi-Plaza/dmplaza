@@ -24,10 +24,10 @@ def section(ps, start, stops):
     return ps[i:end]
 
 
-def formatted(ps, headings):
+def formatted(ps, headings, first_as_bullet=False):
     out = []
     for p in ps:
-        out.append(p if p in headings or not out else '• ' + p)
+        out.append(p if p in headings or (not out and not first_as_bullet) else '• ' + p)
     return '\n'.join(out)
 
 
@@ -40,17 +40,17 @@ with zipfile.ZipFile(SOURCE) as archive:
         source = {'filename': filename, 'sha256': hashlib.sha256(raw).hexdigest(), 'paragraphs': ps}
         if filename.startswith('01_Lead_Barista'):
             description = formatted(section(ps, 'Position Summary', ['Hard Skills and Technical Requirements']), {'What This Role Owns'})
-            description += '\n\n' + formatted(section(ps, 'Brand and Marketing Expectations', ['Application Requirements']), {'Brand and Marketing Expectations'})
-            description += '\n\n' + formatted(section(ps, 'Why Join Pearl & Leaf', ['Lead Barista Hiring Flow']), {'Why Join Pearl & Leaf', 'The role offers:'})
-            requirements = 'Hard Skills and Technical Requirements\n' + formatted(section(ps, 'Hard Skills and Technical Requirements', ['Brand and Marketing Expectations']), {'Soft Skills We Value'})
-            requirements += '\n\n' + formatted(section(ps, 'Preferred Qualifications', ['What Success Looks Like']), {'Preferred Qualifications'})
+            description += '\n\nBrand and Marketing Expectations\n' + formatted(section(ps, 'Brand and Marketing Expectations', ['Application Requirements']), set(), True)
+            description += '\n\nWhy Join Pearl & Leaf\n' + formatted(section(ps, 'Why Join Pearl & Leaf', ['Lead Barista Hiring Flow']), {'The role offers:'})
+            requirements = 'Hard Skills and Technical Requirements\n' + formatted(section(ps, 'Hard Skills and Technical Requirements', ['Brand and Marketing Expectations']), {'Soft Skills We Value'}, True)
+            requirements += '\n\nPreferred Qualifications\n' + formatted(section(ps, 'Preferred Qualifications', ['What Success Looks Like']), set(), True)
             questions = [{'id':'beverage-development','type':'textarea','label':'Tell us about a beverage you developed or significantly improved. What did you change, why, and what was the result?','required':True}]
             record = dict(slug='lead-barista', title=title, business_id='243416bd-ef57-55ea-be65-500bde2946a1', team='Beverage', employment_type='Full-time', compensation='$25–$29 per hour plus tips', openings=1, portfolio_required=False, linkedin_required=False, application_instructions='Apply using the form on this page. A résumé is required. A link or PDFs showing drinks, menus, or recipes you created are welcome but optional.')
         elif filename.startswith('02_Content_and_Community_Manager'):
             description = formatted(section(ps, 'Position Summary', ['Hard Skills and Experience']), {'Core Responsibilities', 'What This Role Is Not'})
-            description += '\n\n' + formatted(section(ps, 'What Success Looks Like', ['Application Instructions']), {'What Success Looks Like'})
-            requirements = 'Hard Skills and Experience\n' + formatted(section(ps, 'Hard Skills and Experience', ['Application Requirements']), {'Community and Partnership Skills', 'Soft Skills We Value', 'On-Camera Expectations'})
-            requirements += '\n\n' + formatted(section(ps, 'Preferred Qualifications', ['What Success Looks Like']), {'Preferred Qualifications'})
+            description += '\n\nWhat Success Looks Like\n' + formatted(section(ps, 'What Success Looks Like', ['Application Instructions']), set(), True)
+            requirements = 'Hard Skills and Experience\n' + formatted(section(ps, 'Hard Skills and Experience', ['Application Requirements']), {'Community and Partnership Skills', 'Soft Skills We Value', 'On-Camera Expectations'}, True)
+            requirements += '\n\nPreferred Qualifications\n' + formatted(section(ps, 'Preferred Qualifications', ['What Success Looks Like']), set(), True)
             questions = [
                 {'id':'portfolio-contribution','type':'textarea','label':'What did you personally contribute to the work in your portfolio?','required':True},
                 {'id':'best-story','type':'textarea','label':'In 100 words or fewer, which piece best represents your storytelling ability, and why?','required':True},
@@ -62,11 +62,11 @@ with zipfile.ZipFile(SOURCE) as archive:
             record = dict(slug='content-community-manager', title=title, business_id='15182148-7439-5c1f-bb14-ba35425c0939', team='Marketing / Community', employment_type='Full-time', compensation='$75,000–$90,000 per year', openings=1, portfolio_required=True, linkedin_required=False, application_instructions='Apply using the form on this page. A résumé and portfolio link are required. Answer the role-specific questions below.')
         elif filename.startswith('12_Executive_Chef_Practical_Assessment_Judge'):
             description = formatted(section(ps, 'Position Summary', ['Required Qualifications']), {'Key Responsibilities', 'Scoring and Feedback'})
-            description += '\n\n' + formatted(section(ps, 'Cuisine Background', ['Compensation']), {'Cuisine Background'})
-            description += '\n\n' + formatted(section(ps, 'Independence and Conflict of Interest', ['Preferred Qualifications']), {'Independence and Conflict of Interest', 'Expected Deliverables'})
-            requirements = 'Required Qualifications\n' + formatted(section(ps, 'Required Qualifications', ['Cuisine Background']), {'Required Qualifications'})
-            requirements += '\n\n' + formatted(section(ps, 'Required Soft Skills', ['Independence and Conflict of Interest']), {'Required Soft Skills'})
-            requirements += '\n\n' + formatted(section(ps, 'Preferred Qualifications', ['Application Instructions']), {'Preferred Qualifications'})
+            description += '\n\nCuisine Background\n' + formatted(section(ps, 'Cuisine Background', ['Compensation']), set())
+            description += '\n\nIndependence and Conflict of Interest\n' + formatted(section(ps, 'Independence and Conflict of Interest', ['Preferred Qualifications']), {'Expected Deliverables'}, True)
+            requirements = 'Required Qualifications\n' + formatted(section(ps, 'Required Qualifications', ['Cuisine Background']), {'Required Qualifications'}, True)
+            requirements += '\n\nRequired Soft Skills\n' + formatted(section(ps, 'Required Soft Skills', ['Independence and Conflict of Interest']), set(), True)
+            requirements += '\n\nPreferred Qualifications\n' + formatted(section(ps, 'Preferred Qualifications', ['Application Instructions']), set(), True)
             questions = [
                 {'id':'judge-availability','type':'yesno','label':'Can you attend a full, one-day, in-person culinary assessment in Jamaica, Queens?','required':True},
                 {'id':'judge-evaluation','type':'textarea','label':'Tell us briefly about your experience assessing, mentoring, training, or hiring chefs.','required':True},
@@ -85,9 +85,9 @@ if len(sys.argv) > 3:
     if ps[0] != 'Executive Chef' or 'DO NOT POST' not in ps:
         raise ValueError('Unexpected Executive Chef document structure')
     description = formatted(section(ps, 'Position Summary', ['Required Qualifications']), {'Key Responsibilities'})
-    description += '\n\n' + formatted(section(ps, 'Why Join Desi Dragon', ['Application Instructions']), {'Why Join Desi Dragon', 'The role offers:'})
-    requirements = 'Required Qualifications\n' + formatted(section(ps, 'Required Qualifications', ['Hiring Process']), {'Core Soft Skills'})
-    requirements += '\n\n' + formatted(section(ps, 'Preferred Qualifications', ['Situational Question']), {'Preferred Qualifications'})
+    description += '\n\nWhy Join Desi Dragon\n' + formatted(section(ps, 'Why Join Desi Dragon', ['Application Instructions']), {'The role offers:'})
+    requirements = 'Required Qualifications\n' + formatted(section(ps, 'Required Qualifications', ['Hiring Process']), {'Core Soft Skills'}, True)
+    requirements += '\n\nPreferred Qualifications\n' + formatted(section(ps, 'Preferred Qualifications', ['Situational Question']), set(), True)
     situation = section(ps, 'Situational Question', ['Why Join Desi Dragon'])
     questions = [{'id':'chef-situation','type':'textarea','label':'How would you handle a delayed dinner service, a Line Cook callout, a returned dish, and a station that is not following the recipe?','helpText':'\n'.join(situation),'required':True}]
     records.append(dict(slug='executive-chef', title='Executive Chef', business_id='4e200f41-222d-5dfa-be0c-e07b99c66b96', team='Kitchen', employment_type='Full-time', compensation='$95,000–$115,000 base salary plus performance bonus', openings=1, portfolio_required=False, linkedin_required=False, application_instructions='Apply using the form on this page. A résumé is required. A brief cover note and menu samples, food photos, or portfolio materials are welcome but optional.', location='Jamaica, Queens, New York', description=description, requirements=requirements, questions=questions, resume_required=True, source_document={'filename': chef_path.name, 'sha256': hashlib.sha256(raw).hexdigest(), 'paragraphs': ps[:ps.index('DO NOT POST')]}, visibility='listed'))
