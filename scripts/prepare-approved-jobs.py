@@ -69,7 +69,6 @@ with zipfile.ZipFile(SOURCE) as archive:
             requirements += '\n\nPreferred Qualifications\n' + formatted(section(ps, 'Preferred Qualifications', ['Application Instructions']), set(), True)
             questions = [
                 {'id':'judge-availability','type':'yesno','label':'Can you attend a full, one-day, in-person culinary assessment in Jamaica, Queens?','required':True},
-                {'id':'judge-evaluation','type':'textarea','label':'Tell us briefly about your experience assessing, mentoring, training, or hiring chefs.','required':True},
                 {'id':'judge-conflict','type':'textarea','label':'Do you know any current Executive Chef candidate or have a relationship that might affect your independence? If none, write “None.”','required':True},
             ]
             record = dict(slug='executive-chef-practical-assessment-judge', title=title, business_id='4e200f41-222d-5dfa-be0c-e07b99c66b96', team='Culinary / Assessment', employment_type='Contract', compensation='$75–$150 per hour for a one-day engagement', openings=2, portfolio_required=False, linkedin_required=False, application_instructions='Apply using the form on this page. A résumé or professional culinary profile is required; relevant certifications may be uploaded as PDFs.')

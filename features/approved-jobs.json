@@ -220,12 +220,6 @@
         "required": true
       },
       {
-        "id": "judge-evaluation",
-        "type": "textarea",
-        "label": "Tell us briefly about your experience assessing, mentoring, training, or hiring chefs.",
-        "required": true
-      },
-      {
         "id": "judge-conflict",
         "type": "textarea",
         "label": "Do you know any current Executive Chef candidate or have a relationship that might affect your independence? If none, write “None.”",
