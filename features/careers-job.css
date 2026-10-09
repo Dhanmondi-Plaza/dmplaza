@@ -9,5 +9,10 @@
 .jobs-role-text ul{margin:0 0 19px;padding-left:23px;list-style:disc}
 .jobs-role-text li{margin:0 0 8px;padding-left:3px;line-height:1.55}
 .jobs-role-text li::marker{color:#80632f}
+.jobs-hiring-process{margin-top:34px}
+.jobs-hiring-process h2{margin:0 0 13px}
+.jobs-hiring-process ol{margin:0;padding-left:25px;list-style:decimal}
+.jobs-hiring-process li{margin:0 0 10px;padding-left:3px;line-height:1.55}
+.jobs-hiring-process li::marker{color:#80632f;font-weight:700}
 @media(max-width:900px){.jobs-role{grid-template-columns:1fr}}
 @media(max-width:760px){.jobs-role{gap:26px}.jobs-role-copy{font-size:16px;line-height:1.55}.jobs-role-copy>h2{margin-top:29px;margin-bottom:11px}.careers-shell .jobs-role-text h3{font-size:16px;margin-top:22px}.jobs-role-text li{margin-bottom:7px}}

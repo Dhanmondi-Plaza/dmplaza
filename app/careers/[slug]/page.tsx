@@ -2,6 +2,7 @@ import {notFound} from 'next/navigation';
 import {ApplicationForm} from '../../../features/careers-ui';
 import {jobs,previewEnabled,databaseReady,intakeReady} from '../../../features/careers-server';
 import {sampleJobs} from '../../../features/careers-domain';
+import {hiringProcessBySlug} from '../../../features/hiring-process';
 
 const sectionHeaders=new Set([
   'Key Responsibilities',
@@ -108,6 +109,7 @@ export default async function Page({params,searchParams}:{params:Promise<{slug:s
         <h2>The role</h2><JobText text={description.main}/>
         <h2>What you’ll bring</h2><JobText text={job.requirements}/>
         {description.why&&<><h2>{description.whyTitle}</h2><JobText text={description.why}/></>}
+        {hiringProcessBySlug[job.slug]&&<section className="jobs-hiring-process" aria-labelledby="hiring-process-title"><h2 id="hiring-process-title">Hiring process</h2><ol>{hiringProcessBySlug[job.slug].map((step,index)=><li key={index}>{step}</li>)}</ol></section>}
         {(accepting||preview)&&job.application_instructions&&<><h2>Application materials</h2><JobText text={job.application_instructions}/></>}
       </article>
       {accepting||preview
