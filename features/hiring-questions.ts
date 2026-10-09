@@ -1,0 +1,5 @@
+import {z} from 'zod';
+export const questionSchema=z.object({id:z.string().regex(/^[a-zA-Z0-9_-]{1,60}$/),label:z.string().trim().min(3).max(300),helpText:z.string().max(5000).optional(),type:z.enum(['text','textarea','select','yesno']),required:z.boolean(),options:z.array(z.string().trim().min(1).max(150)).max(20).optional()}).strict().refine(q=>q.type!=='select'||!!q.options?.length,{message:'Dropdown questions need options.'});
+export const questionsSchema=z.array(questionSchema).max(12).refine(q=>new Set(q.map(x=>x.id)).size===q.length,{message:'Question IDs must be unique.'});
+export type HiringQuestion=z.infer<typeof questionSchema>;
+export function validateAnswers(questions:HiringQuestion[],answers:Record<string,string>){for(const q of questions){const v=(answers[q.id]||'').trim();if(q.required&&!v)return `Please answer: ${q.label}`;if(v.length>3000)return 'An answer is too long.';if(v&&q.type==='select'&&!q.options?.includes(v))return `Choose an option for: ${q.label}`;if(v&&q.type==='yesno'&&!['Yes','No'].includes(v))return `Choose Yes or No for: ${q.label}`;}return null;}

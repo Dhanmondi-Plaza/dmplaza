@@ -1,0 +1,118 @@
+[
+  {
+    "id": "1a5cdc4b-075b-4217-adbb-40ed2e95df52",
+    "title": "Junior Cook",
+    "slug": "junior-cook",
+    "brand": "Desi Dragon",
+    "team": "Kitchen",
+    "location": "Jamaica, Queens, New York",
+    "employment_type": "Full-time or part-time",
+    "description": "Desi Dragon - DM Plaza\n\nReports to: Executive Chef / Sous Chef\n\nThe Junior Cook supports the kitchen team with preparation, basic station responsibilities, recipe execution, sanitation, and service support while continuing to develop professional culinary skills.\n\nKey Responsibilities\n• Complete assigned prep work.\n• Wash, cut, portion, measure, and prepare ingredients.\n• Prepare approved menu components according to recipes.\n• Assist senior cooks during service.\n• Maintain station cleanliness and organization.\n• Follow food-storage, labeling, dating, and rotation procedures.\n• Follow sanitation and temperature-control requirements.\n• Replenish station ingredients.\n• Report shortages or quality concerns.\n• Assist with opening and closing tasks.\n• Learn additional stations as skills develop.",
+    "requirements": "Required Qualifications\n• Minimum 3 years of relevant food-service, culinary, food-preparation, or commercial kitchen experience.\n• Basic professional cooking and knife skills.\n• Ability to follow recipes and instructions accurately.\n• Basic food-safety knowledge.\n• Ability to work quickly and safely.\n• Willingness to learn multiple stations.\n\nCore Soft Skills\n• Coachability and reliability.\n• Attention to detail and teamwork.\n• Positive attitude and sense of urgency.\n• Cleanliness and organization.\n• Respectful communication.\n• Willingness to learn.\n\nPreferred Qualifications\n• Experience with Indian or Chinese cuisine.\n• Culinary training.\n• Comfort appearing and speaking on camera for appropriate restaurant marketing, team content, or promotional activities.\n• Ability to speak Bengali is a plus but is not required.",
+    "compensation": "$19–$24 per hour",
+    "visibility": "draft",
+    "version": 1,
+    "created_at": "2026-10-07T21:19:00Z",
+    "openings": 2,
+    "questions": [
+      {
+        "id": "situational-response",
+        "label": "Situational question",
+        "helpText": "During a busy service, a Junior Cook finishes an assigned prep task but notices that another station is running low on ingredients. At the same time, the Sous Chef gives a new instruction that the Junior Cook has not performed before.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would do first.\n\nHow they would clarify an unfamiliar instruction.\n\nHow they would decide whether to help the other station.\n\nHow they would make sure the task is completed safely and correctly.\n\nWhat they would do if they realized they had made a mistake.\n\nThe response should be concise but detailed enough to demonstrate coachability, communication, judgment, teamwork, and willingness to learn.",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "resume_required": true,
+    "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant culinary training or certifications.\n• A written response to the situational question below.",
+    "portfolio_required": false,
+    "linkedin_required": false
+  },
+  {
+    "id": "4357c15a-5db9-4f8e-b71d-cb9214f81394",
+    "title": "Dishwasher / Kitchen Steward",
+    "slug": "dishwasher-kitchen-steward",
+    "brand": "Desi Dragon",
+    "team": "Kitchen",
+    "location": "Jamaica, Queens, New York",
+    "employment_type": "Full-time or part-time",
+    "description": "Desi Dragon - DM Plaza\n\nReports to: Sous Chef / Executive Chef / Restaurant Manager\n\nThe Dishwasher / Kitchen Steward is responsible for maintaining clean and sanitary dishes, cookware, utensils, equipment, and kitchen work areas, helping keep the kitchen safe, organized, and ready for continuous service.\n\nKey Responsibilities\n• Wash and sanitize dishes, cookware, pots, pans, utensils, and equipment.\n• Operate commercial dishwashing equipment safely.\n• Properly store clean dishes and equipment.\n• Maintain an organized dishwashing area.\n• Sweep and mop assigned areas.\n• Remove trash and recycling.\n• Clean kitchen surfaces and designated equipment.\n• Maintain sanitation supplies.\n• Assist with moving and stocking kitchen supplies.\n• Follow chemical-handling and sanitation procedures.\n• Complete opening and closing cleaning assignments.\n• Immediately report sanitation hazards, leaks, or damaged equipment.\n• Support continuous kitchen cleanliness during service.",
+    "requirements": "Required Qualifications\n• Minimum 3 years of restaurant dishwashing, kitchen stewarding, sanitation, utility, or comparable commercial food-service experience.\n• Understanding of sanitation procedures.\n• Familiarity with commercial dishwashing equipment preferred.\n• Ability to work efficiently in a physically active environment.\n• Ability to follow safety and cleaning procedures consistently.\n\nCore Soft Skills\n• Dependability and strong work ethic.\n• Cleanliness and attention to detail.\n• Cooperation and sense of urgency.\n• Accountability and organization.\n• Positive attitude.\n\nPreferred Qualifications\n• High-volume restaurant experience.\n• Familiarity with commercial kitchen sanitation.\n• Comfort appearing and speaking on camera for appropriate restaurant marketing, team content, or promotional activities.\n• Ability to speak Bengali is a plus but is not required.",
+    "compensation": "$18–$21 per hour",
+    "visibility": "draft",
+    "version": 1,
+    "created_at": "2026-10-07T21:19:00Z",
+    "openings": 2,
+    "questions": [
+      {
+        "id": "situational-response",
+        "label": "Situational question",
+        "helpText": "During a busy dinner service, the dish area is becoming backed up, the kitchen is urgently requesting clean cookware, the dining room needs additional clean plates, and a spill near the dish station creates a potential safety hazard.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would prioritize the different dishwashing needs.\n\nHow they would handle the safety hazard.\n\nHow they would communicate with the kitchen or front-of-house team.\n\nWhat they would do to bring the dish area back under control.\n\nThe response should be concise but detailed enough to demonstrate prioritization, safety awareness, communication, organization, and ability to work under pressure.",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "resume_required": true,
+    "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant food-safety or sanitation certifications, if available.\n• A written response to the situational question below.",
+    "portfolio_required": false,
+    "linkedin_required": false
+  },
+  {
+    "id": "752f37e8-30bf-4009-a5fc-4b4dca034578",
+    "title": "Maintenance Team Member",
+    "slug": "maintenance-team-member",
+    "brand": "DM Plaza",
+    "team": "Operations / Facilities",
+    "location": "Jamaica, Queens, New York",
+    "employment_type": "Full-time",
+    "description": "DM Plaza / Desi Dragon\n\nReports to: Restaurant Manager\n\nThe Maintenance Team Member supports safe, clean, functional, and well-maintained restaurant facilities through routine inspections, basic preventive maintenance, minor repairs, and prompt reporting of issues requiring specialized service.\n\nKey Responsibilities\n• Conduct routine facility inspections.\n• Perform basic preventive maintenance.\n• Identify and report damaged equipment, fixtures, doors, flooring, plumbing, lighting, or other facility issues.\n• Complete minor repairs within training and authorization.\n• Help maintain restaurant furniture, fixtures, storage areas, and non-specialized equipment.\n• Coordinate access for approved outside maintenance vendors when directed.\n• Maintain maintenance logs and report recurring problems.\n• Support opening and closing facility checks.\n• Assist with moving equipment and supplies safely.\n• Maintain tools and maintenance materials properly.\n• Immediately report electrical, fire-safety, plumbing, structural, or other significant hazards.\n• Do not perform licensed work unless appropriately qualified and authorized.",
+    "requirements": "Required Qualifications\n• Minimum 3 years of maintenance, facilities, property operations, restaurant maintenance, or comparable experience.\n• Basic knowledge of common maintenance tools and procedures.\n• Ability to identify facility or equipment problems.\n• Ability to perform basic repairs safely.\n• Strong attention to safety.\n• Ability to maintain maintenance records.\n\nCore Soft Skills\n• Reliability and attention to detail.\n• Problem solving and safety awareness.\n• Initiative and organization.\n• Accountability and adaptability.\n• Professionalism and good communication.\n\nPreferred Qualifications\n• Restaurant, hospitality, retail, or commercial-property maintenance experience.\n• Basic plumbing, carpentry, hardware, or equipment-maintenance experience.\n• Comfort appearing and speaking on camera for appropriate restaurant marketing, team content, or promotional activities.\n• Ability to speak Bengali is a plus but is not required.",
+    "compensation": "$22–$30 per hour",
+    "visibility": "draft",
+    "version": 1,
+    "created_at": "2026-10-07T21:19:00Z",
+    "openings": 2,
+    "questions": [
+      {
+        "id": "situational-response",
+        "label": "Situational question",
+        "helpText": "During an operating shift, a Maintenance Team Member is informed that water is beginning to collect near a kitchen fixture. At the same time, a dining-room light has stopped working, a door is not closing properly, and the Restaurant Manager asks for an update on another open maintenance issue.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would determine whether an issue can be handled safely within their role.\n\nWhat they would do if the water issue appeared to require a licensed plumber or specialized technician.\n\nHow they would communicate the situation to the Restaurant Manager.\n\nHow they would document and follow up on the remaining maintenance issues.\n\nThe response should be concise but detailed enough to demonstrate safety awareness, prioritization, judgment, communication, and problem-solving ability.",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "resume_required": true,
+    "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant trade, safety, facilities, or equipment certifications, if available.\n• A written response to the situational question below.",
+    "portfolio_required": false,
+    "linkedin_required": false
+  },
+  {
+    "id": "2ea10ba9-ddd5-4b2b-929e-ba27ac427b40",
+    "title": "Mocktail Bartender / Beverage Specialist",
+    "slug": "mocktail-bartender-beverage-specialist",
+    "brand": "Desi Dragon",
+    "team": "Front of House / Beverage",
+    "location": "Jamaica, Queens, New York",
+    "employment_type": "Full-time or part-time",
+    "description": "Desi Dragon - DM Plaza\n\nReports to: Restaurant Manager / FOH Supervisor\n\nThe Mocktail Bartender / Beverage Specialist prepares visually appealing, consistent, and high-quality nonalcoholic beverages while delivering a strong guest experience. The role combines beverage technique, creativity, speed, cleanliness, and confident guest interaction.\n\nKey Responsibilities\n• Prepare mocktails and other approved beverages according to standardized recipes.\n• Measure ingredients accurately.\n• Maintain consistency in taste, appearance, garnish, and portion size.\n• Prepare syrups, garnishes, infusions, mixes, and beverage components.\n• Maintain an organized and sanitary beverage station.\n• Take beverage orders from guests or service staff.\n• Explain ingredients and recommend drinks.\n• Support development and testing of new mocktails.\n• Monitor ingredient freshness and quality.\n• Follow proper storage, labeling, and sanitation procedures.\n• Communicate supply shortages to management.\n• Minimize unnecessary beverage waste.\n• Clean beverage equipment, glassware, tools, and work areas.\n• Support special events and promotional beverage service.",
+    "requirements": "Required Qualifications\n• Minimum 3 years of professional bartending, mocktail, specialty beverage, cafe, restaurant beverage, or comparable beverage-service experience.\n• Strong beverage-preparation skills.\n• Knowledge of flavor balancing, garnishing, and presentation.\n• Strong customer-service skills.\n• Ability to consistently follow beverage recipes.\n• Ability to perform efficiently during busy service.\n\nCore Soft Skills\n• Creativity and social confidence.\n• Guest engagement and communication.\n• Attention to detail and reliability.\n• Organization and positive attitude.\n• Teamwork, adaptability, and professionalism.\n\nPreferred Qualifications\n• Mocktail-development experience.\n• Knowledge of South Asian or Asian flavors.\n• Experience developing visually appealing beverages.\n• Strong camera presence and comfort demonstrating drinks for social media.\n• Ability to speak Bengali is a plus but is not required.",
+    "compensation": "$22–$28 per hour",
+    "visibility": "draft",
+    "version": 1,
+    "created_at": "2026-10-07T21:19:00Z",
+    "openings": 1,
+    "questions": [
+      {
+        "id": "situational-response",
+        "label": "Situational question",
+        "helpText": "During a busy dinner service, several beverage orders are waiting, one key mocktail ingredient is running low, a guest says their drink tastes different from the last time they ordered it, and a Server asks for a recommendation for another guest who prefers something refreshing but not too sweet.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would handle the inconsistent drink.\n\nHow they would manage the ingredient shortage.\n\nHow they would recommend an appropriate drink to the guest.\n\nHow they would keep the beverage station organized while handling multiple orders.\n\nWhat they would do after service to help prevent the same consistency or supply issue from happening again.\n\nThe response should be concise but detailed enough to demonstrate beverage knowledge, prioritization, guest service, communication, consistency, and problem-solving ability.",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "resume_required": true,
+    "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Photos, menus, beverage portfolios, or other examples of previous work, if available.\n• A written response to the situational question below.",
+    "portfolio_required": false,
+    "linkedin_required": false
+  }
+]

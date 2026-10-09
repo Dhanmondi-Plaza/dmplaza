@@ -1,0 +1,1 @@
+export default function Page(){return <section className="jobs-card"><h1>Hiring is managed in DM Plaza OS</h1><p>Use your approved staff account to manage jobs and review applications.</p><a className="jobs-button" href={process.env.OS_ORIGIN||'https://os.dhanmondiplaza.com'}>Open DM Plaza OS →</a></section>}
