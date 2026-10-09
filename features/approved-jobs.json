@@ -26,7 +26,9 @@
     "resume_required": true,
     "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant culinary training or certifications.\n• A written response to the situational question below.",
     "portfolio_required": false,
-    "linkedin_required": false
+    "linkedin_required": false,
+    "display_priority": 4,
+    "is_featured": false
   },
   {
     "id": "4357c15a-5db9-4f8e-b71d-cb9214f81394",
@@ -55,7 +57,9 @@
     "resume_required": true,
     "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant food-safety or sanitation certifications, if available.\n• A written response to the situational question below.",
     "portfolio_required": false,
-    "linkedin_required": false
+    "linkedin_required": false,
+    "display_priority": 6,
+    "is_featured": false
   },
   {
     "id": "752f37e8-30bf-4009-a5fc-4b4dca034578",
@@ -84,7 +88,9 @@
     "resume_required": true,
     "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Any relevant trade, safety, facilities, or equipment certifications, if available.\n• A written response to the situational question below.",
     "portfolio_required": false,
-    "linkedin_required": false
+    "linkedin_required": false,
+    "display_priority": 7,
+    "is_featured": false
   },
   {
     "id": "2ea10ba9-ddd5-4b2b-929e-ba27ac427b40",
@@ -113,7 +119,9 @@
     "resume_required": true,
     "application_instructions": "Apply using the form on this page. Include:\n• Current resume.\n• Photos, menus, beverage portfolios, or other examples of previous work, if available.\n• A written response to the situational question below.",
     "portfolio_required": false,
-    "linkedin_required": false
+    "linkedin_required": false,
+    "display_priority": 5,
+    "is_featured": false
   },
   {
     "slug": "lead-barista",
@@ -141,7 +149,9 @@
     "brand": "Pearl & Leaf",
     "visibility": "draft",
     "version": 1,
-    "created_at": "2026-10-08T22:00:00Z"
+    "created_at": "2026-10-08T22:00:00Z",
+    "display_priority": 2,
+    "is_featured": true
   },
   {
     "slug": "content-community-manager",
@@ -200,7 +210,9 @@
     "brand": "DM Plaza",
     "visibility": "draft",
     "version": 1,
-    "created_at": "2026-10-08T22:00:00Z"
+    "created_at": "2026-10-08T22:00:00Z",
+    "display_priority": 3,
+    "is_featured": true
   },
   {
     "slug": "executive-chef-practical-assessment-judge",
@@ -234,7 +246,9 @@
     "brand": "Desi Dragon",
     "visibility": "draft",
     "version": 1,
-    "created_at": "2026-10-08T22:00:00Z"
+    "created_at": "2026-10-08T22:00:00Z",
+    "display_priority": 8,
+    "is_featured": false
   },
   {
     "slug": "executive-chef",
@@ -263,6 +277,8 @@
     "brand": "Desi Dragon",
     "visibility": "draft",
     "version": 1,
-    "created_at": "2026-10-08T22:00:00Z"
+    "created_at": "2026-10-08T22:00:00Z",
+    "display_priority": 1,
+    "is_featured": true
   }
 ]
