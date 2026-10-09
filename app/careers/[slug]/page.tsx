@@ -12,6 +12,23 @@ const sectionHeaders=new Set([
   'Benefits',
   'Work Schedule',
   'Application Materials',
+  'What This Role Owns',
+  'Brand and Marketing Expectations',
+  'Why Join Pearl & Leaf',
+  'Soft Skills We Value',
+  'Community and Partnership Skills',
+  'On-Camera Expectations',
+  'What This Role Is Not',
+  'What Success Looks Like',
+  'Scoring and Feedback',
+  'Cuisine Background',
+  'Independence and Conflict of Interest',
+  'Expected Deliverables',
+  'Required Soft Skills',
+  'Hard Skills and Technical Requirements',
+  'Hard Skills and Experience',
+  'Core Responsibilities',
+  'Why Join Desi Dragon',
 ]);
 
 function JobText({text}:{text:string}){
