@@ -17,8 +17,8 @@
     "questions": [
       {
         "id": "situational-response",
-        "label": "Situational question",
-        "helpText": "During a busy service, a Junior Cook finishes an assigned prep task but notices that another station is running low on ingredients. At the same time, the Sous Chef gives a new instruction that the Junior Cook has not performed before.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would do first.\n\nHow they would clarify an unfamiliar instruction.\n\nHow they would decide whether to help the other station.\n\nHow they would make sure the task is completed safely and correctly.\n\nWhat they would do if they realized they had made a mistake.\n\nThe response should be concise but detailed enough to demonstrate coachability, communication, judgment, teamwork, and willingness to learn.",
+        "label": "How would you handle this kitchen situation?",
+        "helpText": "You have finished prep, another station is running low, and your Sous Chef gives you an unfamiliar task. What would you do next? How would you clarify the instruction, decide whether to help the other station, and handle a mistake if you made one?",
         "type": "textarea",
         "required": true
       }
@@ -49,8 +49,8 @@
     "questions": [
       {
         "id": "situational-response",
-        "label": "Situational question",
-        "helpText": "During a busy dinner service, the dish area is becoming backed up, the kitchen is urgently requesting clean cookware, the dining room needs additional clean plates, and a spill near the dish station creates a potential safety hazard.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would prioritize the different dishwashing needs.\n\nHow they would handle the safety hazard.\n\nHow they would communicate with the kitchen or front-of-house team.\n\nWhat they would do to bring the dish area back under control.\n\nThe response should be concise but detailed enough to demonstrate prioritization, safety awareness, communication, organization, and ability to work under pressure.",
+        "label": "How would you prioritize during a busy service?",
+        "helpText": "Clean cookware and plates are urgently needed while the dish area backs up and a spill creates a safety risk. Describe what you would do first, how you would communicate with the team, and how you would bring the area back under control.",
         "type": "textarea",
         "required": true
       }
@@ -81,8 +81,8 @@
     "questions": [
       {
         "id": "situational-response",
-        "label": "Situational question",
-        "helpText": "During an operating shift, a Maintenance Team Member is informed that water is beginning to collect near a kitchen fixture. At the same time, a dining-room light has stopped working, a door is not closing properly, and the Restaurant Manager asks for an update on another open maintenance issue.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would determine whether an issue can be handled safely within their role.\n\nWhat they would do if the water issue appeared to require a licensed plumber or specialized technician.\n\nHow they would communicate the situation to the Restaurant Manager.\n\nHow they would document and follow up on the remaining maintenance issues.\n\nThe response should be concise but detailed enough to demonstrate safety awareness, prioritization, judgment, communication, and problem-solving ability.",
+        "label": "How would you handle several maintenance issues at once?",
+        "helpText": "Water is collecting near a kitchen fixture, a dining-room light is out, a door is not closing properly, and the Restaurant Manager asks about another open issue. Explain what you would address first, when you would involve a licensed professional, and how you would communicate and document the remaining work.",
         "type": "textarea",
         "required": true
       }
@@ -113,8 +113,8 @@
     "questions": [
       {
         "id": "situational-response",
-        "label": "Situational question",
-        "helpText": "During a busy dinner service, several beverage orders are waiting, one key mocktail ingredient is running low, a guest says their drink tastes different from the last time they ordered it, and a Server asks for a recommendation for another guest who prefers something refreshing but not too sweet.\n\nThe candidate should explain how they would handle the situation, including:\n\nWhat they would address first and why.\n\nHow they would handle the inconsistent drink.\n\nHow they would manage the ingredient shortage.\n\nHow they would recommend an appropriate drink to the guest.\n\nHow they would keep the beverage station organized while handling multiple orders.\n\nWhat they would do after service to help prevent the same consistency or supply issue from happening again.\n\nThe response should be concise but detailed enough to demonstrate beverage knowledge, prioritization, guest service, communication, consistency, and problem-solving ability.",
+        "label": "How would you handle a busy beverage service?",
+        "helpText": "Several orders are waiting, an ingredient is running low, a guest says their drink tastes different from last time, and a Server requests a refreshing, not-too-sweet recommendation. Explain how you would prioritize, respond to the guest and Server, keep service moving, and prevent a repeat issue.",
         "type": "textarea",
         "required": true
       }
@@ -271,8 +271,8 @@
       {
         "id": "chef-situation",
         "type": "textarea",
-        "label": "How would you handle a delayed dinner service, a Line Cook callout, a returned dish, and a station that is not following the recipe?",
-        "helpText": "During a busy dinner service at Desi Dragon, several orders are already delayed, one of the strongest Line Cooks calls out unexpectedly, and a guest returns a dish because the flavor is inconsistent with a previous visit. At the same time, the Executive Chef notices that one kitchen station is not following the standardized recipe correctly.\nThe candidate should explain how they would handle the situation, including:\nWhat they would address first and why.\nHow they would reorganize the kitchen team for the remainder of service.\nHow they would handle the guest's food-quality concern.\nHow they would address the employee who was not following the standardized recipe.\nWhat they would do after service to reduce the likelihood of the same issues happening again.\nThe response should be concise but detailed enough to demonstrate the candidate's approach to prioritization, leadership, communication, quality control, and problem solving.",
+        "label": "How would you lead this dinner service?",
+        "helpText": "Several orders are delayed. A Line Cook calls out, a guest returns a dish for inconsistent flavor, and one station is not following the standard recipe. Describe what you would do during service, how you would communicate with the team and guest, and what you would address afterward.",
         "required": true
       }
     ],
