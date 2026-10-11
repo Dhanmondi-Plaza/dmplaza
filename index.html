@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWC6F61CQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZWC6F61CQ2');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Discover DM Plaza in Jamaica, Queens: dining, specialty groceries, bubble tea, events, and urgent care. Expected opening Fall 2026.">
@@ -359,6 +351,13 @@
   .footer-ig:hover{color:var(--gold)}
   .footer-ig svg{width:13px;height:13px;stroke:currentColor;fill:none;flex-shrink:0}
   .footer-copy{font-size:12px;color:var(--mid);font-weight:300}
+  .footer-links button{font:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:none;border:0;padding:0;cursor:pointer}
+  .footer-links button:hover{color:var(--gold)}
+  .footer-links :focus-visible,.cookie-choice :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+  .cookie-choice{position:fixed;left:18px;bottom:20px;z-index:190;max-width:min(430px,calc(100vw - 36px));padding:20px;background:#181611;color:#f0ead8;border:1px solid #8b7040;border-radius:8px;box-shadow:0 12px 38px #0009;font-family:'Outfit',sans-serif}
+  .cookie-choice[hidden]{display:none}.cookie-choice h2{font:500 20px 'Cormorant Garamond',serif;margin:0 0 8px}.cookie-choice p{font-size:13px;line-height:1.55;margin:0 0 14px;color:#e6decb}.cookie-choice a{color:#e9c986}
+  .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-actions button{flex:1;min-height:44px;padding:8px 12px;border:1px solid #c9a050;border-radius:3px;background:transparent;color:#f0ead8;cursor:pointer}.cookie-actions button:last-child{background:#c9a050;color:#141310}
+  @media(max-width:760px){.cookie-choice{left:12px;bottom:85px;max-width:calc(100vw - 24px);padding:16px}}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
   .fade-up{opacity:0;animation:fadeUp .8s ease forwards}
@@ -1471,6 +1470,7 @@ body{padding-bottom:110px}html:not([lang="en"]) body{overflow-wrap:anywhere}html
 </form>
       <p id="dm-error" class="form-error" role="alert"></p>
       <div class="nsuccess" id="dm-success" role="status" tabindex="-1">You're on the list. We'll see you on Hillside Ave.</div>
+      <p style="font-size:11px;font-weight:300;color:var(--mid);margin-top:12px;">By signing up, you agree to receive DM Plaza updates. <a href="/privacy" style="color:var(--gold);">Privacy notice</a></p>
       <p style="font-size:11px;font-weight:300;color:var(--mid);margin-top:12px;">For event inquiries: <a href="mailto:info@dhanmondiplaza.com" style="color:var(--gold);text-decoration:none;">info@dhanmondiplaza.com</a></p>
 
       <!-- Social follow row -->
@@ -1500,6 +1500,8 @@ body{padding-bottom:110px}html:not([lang="en"]) body{overflow-wrap:anywhere}html
         <a href="#partners">Partners</a>
         <a href="#location">Visit</a>
         <a href="/careers">Careers</a>
+        <a href="/privacy">Privacy &amp; cookies</a>
+        <button type="button" id="cookie-settings">Cookie settings</button>
         <a href="mailto:info@dhanmondiplaza.com">Contact</a>
         <a href="https://www.instagram.com/dhanmondiplaza" target="_blank" rel="noopener" class="footer-ig">
           <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1514,6 +1516,68 @@ body{padding-bottom:110px}html:not([lang="en"]) body{overflow-wrap:anywhere}html
     </div>
   </div>
 </footer>
+
+<section class="cookie-choice" id="cookie-choice" aria-labelledby="cookie-title" hidden>
+  <h2 id="cookie-title">Your privacy choices</h2>
+  <p id="cookie-description">We use essential storage for your language and privacy choices. With your permission, Google Analytics helps us understand visits. <a href="/privacy#cookies">Privacy &amp; cookies</a></p>
+  <div class="cookie-actions"><button type="button" id="cookie-reject">Reject analytics</button><button type="button" id="cookie-accept">Allow analytics</button></div>
+</section>
+<script>
+(() => {
+  const key = 'dm-analytics-choice';
+  const banner = document.getElementById('cookie-choice');
+  const copy = {
+    en: ['Your privacy choices', 'We use essential storage for your language and privacy choices. With your permission, Google Analytics helps us understand visits.', 'Privacy & cookies', 'Reject analytics', 'Allow analytics'],
+    bn: ['আপনার গোপনীয়তার পছন্দ', 'আপনার ভাষা ও গোপনীয়তার পছন্দ মনে রাখতে প্রয়োজনীয় স্টোরেজ ব্যবহার করি। আপনার অনুমতি পেলে Google Analytics দিয়ে ভিজিট সম্পর্কে জানতে পারি।', 'গোপনীয়তা ও কুকিজ', 'অ্যানালিটিক্স প্রত্যাখ্যান', 'অ্যানালিটিক্স অনুমোদন'],
+    es: ['Tus opciones de privacidad', 'Usamos almacenamiento esencial para recordar el idioma y tus preferencias. Con tu permiso, Google Analytics nos ayuda a conocer las visitas.', 'Privacidad y cookies', 'Rechazar analíticas', 'Permitir analíticas'],
+    'zh-CN': ['您的隐私选择', '我们使用必要的存储来记住您的语言和隐私选择。经您同意后，Google Analytics 可帮助我们了解访问情况。', '隐私与 Cookie', '拒绝分析', '允许分析']
+  };
+  function translate() {
+    const [title, description, link, reject, accept] = copy[document.documentElement.lang] || copy.en;
+    document.getElementById('cookie-title').textContent = title;
+    document.getElementById('cookie-description').firstChild.textContent = description + ' ';
+    document.querySelector('#cookie-description a').textContent = link;
+    document.getElementById('cookie-reject').textContent = reject;
+    document.getElementById('cookie-accept').textContent = accept;
+  }
+  function startAnalytics() {
+    if (document.getElementById('dm-google-analytics')) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-ZWC6F61CQ2');
+    const script = document.createElement('script');
+    script.id = 'dm-google-analytics';
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZWC6F61CQ2';
+    document.head.appendChild(script);
+  }
+  function choice() {
+    try { const saved = JSON.parse(localStorage.getItem(key)); return Date.now() - saved.at < 180 * 86400000 ? saved.value : null; } catch { return null; }
+  }
+  function save(value) {
+    try { localStorage.setItem(key, JSON.stringify({value, at: Date.now()})); } catch {}
+    banner.hidden = true;
+    if (value === 'accepted') { startAnalytics(); return; }
+    if (document.getElementById('dm-google-analytics')) {
+      document.cookie.split(';').forEach(part => {
+        const name = part.trim().split('=')[0];
+        if (name === '_ga' || name.startsWith('_ga_')) {
+          document.cookie = name + '=; Max-Age=0; Path=/';
+          document.cookie = name + '=; Max-Age=0; Path=/; Domain=.dhanmondiplaza.com';
+        }
+      });
+      location.reload();
+    }
+  }
+  translate();
+  document.addEventListener('site-language-change', translate);
+  document.getElementById('cookie-settings').addEventListener('click', () => { translate(); banner.hidden = false; document.getElementById('cookie-reject').focus(); });
+  document.getElementById('cookie-reject').addEventListener('click', () => save('declined'));
+  document.getElementById('cookie-accept').addEventListener('click', () => save('accepted'));
+  if (choice() === 'accepted') startAnalytics(); else if (!choice()) banner.hidden = false;
+})();
+</script>
 
 <script>
 (function () {
