@@ -1,7 +1,8 @@
 import {z} from 'zod';
 
 export const MAX_RESUME_BYTES = 3 * 1024 * 1024;
-export const MAX_APPLICATION_BYTES = MAX_RESUME_BYTES + 32 * 1024;
+// Text answers, cover letter, JSON escaping, and multipart framing need room too.
+export const MAX_APPLICATION_BYTES = MAX_RESUME_BYTES + 512 * 1024;
 export const CAREERS_CONSENT_VERSION = 'careers-2026-09-20';
 export const careersApplicationSchema = z.object({
   jobId: z.uuid(),

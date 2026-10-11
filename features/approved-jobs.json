@@ -28,7 +28,8 @@
     "portfolio_required": false,
     "linkedin_required": false,
     "display_priority": 4,
-    "is_featured": false
+    "is_featured": false,
+    "public_hiring_process": "Application review focused on relevant experience, reliability, and willingness to learn.\nA short screening interview.\nFinalists may complete a practical kitchen-skills assessment. We will explain the format in advance.\nTeam-fit discussion and reference checks before a hiring decision."
   },
   {
     "id": "4357c15a-5db9-4f8e-b71d-cb9214f81394",
@@ -59,7 +60,8 @@
     "portfolio_required": false,
     "linkedin_required": false,
     "display_priority": 6,
-    "is_featured": false
+    "is_featured": false,
+    "public_hiring_process": "Application review focused on sanitation, reliability, and relevant kitchen experience.\nA short screening interview.\nFinalists may complete a short practical work assessment. We will explain the format and expectations in advance.\nReliability and team-fit discussion, then reference checks before a hiring decision."
   },
   {
     "id": "752f37e8-30bf-4009-a5fc-4b4dca034578",
@@ -90,7 +92,8 @@
     "portfolio_required": false,
     "linkedin_required": false,
     "display_priority": 7,
-    "is_featured": false
+    "is_featured": false,
+    "public_hiring_process": "Application review focused on safety, preventive maintenance, and relevant experience.\nA structured screening interview about troubleshooting and when to escalate a problem.\nFinalists may complete a practical assessment of basic, non-licensed maintenance tasks. We will explain the format and criteria in advance.\nSafety and team-fit discussion, then reference checks before a hiring decision."
   },
   {
     "id": "2ea10ba9-ddd5-4b2b-929e-ba27ac427b40",
@@ -121,7 +124,8 @@
     "portfolio_required": false,
     "linkedin_required": false,
     "display_priority": 5,
-    "is_featured": false
+    "is_featured": false,
+    "public_hiring_process": "Application and optional beverage-work review, followed by a screening interview.\nA discussion of beverages you personally developed or improved and the choices behind them.\nFinalists may complete a paid practical beverage assessment. We will explain the format and criteria in advance.\nFinal interview, reference checks, and hiring decision."
   },
   {
     "slug": "lead-barista",
@@ -151,7 +155,8 @@
     "version": 1,
     "created_at": "2026-10-08T22:00:00Z",
     "display_priority": 2,
-    "is_featured": true
+    "is_featured": true,
+    "public_hiring_process": "Application review, including your example of a drink you developed or improved and any optional work samples.\nA 20-minute screening conversation, followed by a 45-minute review of your drink concepts and personal contributions.\nFinalists complete a paid on-site beverage practical, including recipe documentation so another barista could reproduce a drink.\nFinal decision and reference checks."
   },
   {
     "slug": "content-community-manager",
@@ -212,7 +217,8 @@
     "version": 1,
     "created_at": "2026-10-08T22:00:00Z",
     "display_priority": 3,
-    "is_featured": true
+    "is_featured": true,
+    "public_hiring_process": "Portfolio and application review, followed by a structured interview about your personal contribution to the work shown.\nA live discussion of content, founder-story, and community scenarios. The initial application does not require you to produce or edit content.\nFinalists complete a paid on-site field test involving observation, filming, and a short-form content piece.\nFinal debrief and reference checks."
   },
   {
     "slug": "executive-chef-practical-assessment-judge",
@@ -248,7 +254,8 @@
     "version": 1,
     "created_at": "2026-10-08T22:00:00Z",
     "display_priority": 8,
-    "is_featured": false
+    "is_featured": false,
+    "public_hiring_process": "Application review of your culinary background and professional experience.\nSelected professionals may have a brief discussion to confirm availability, compensation, and potential conflicts of interest.\nThe engagement is an in-person, one-day assessment. Judges submit independent scores and written observations."
   },
   {
     "slug": "executive-chef",
@@ -279,6 +286,7 @@
     "version": 1,
     "created_at": "2026-10-08T22:00:00Z",
     "display_priority": 1,
-    "is_featured": true
+    "is_featured": true,
+    "public_hiring_process": "Application and résumé review, including any optional menu or food examples.\nA structured interview about culinary leadership, Indian and Chinese cuisine, team development, and kitchen judgment.\nFinalists complete a practical culinary assessment. We will explain its format and main evaluation criteria in advance.\nFinal review and reference checks before a hiring decision."
   }
 ]
