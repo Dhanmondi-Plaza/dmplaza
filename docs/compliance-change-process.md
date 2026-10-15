@@ -10,11 +10,12 @@ This is an operating checklist for the current pre-opening homepage and careers 
 4. Check the source and usage rights for every new photo, illustration, font, testimonial, and video. Keep the license or permission record with the asset.
 5. Before adding a payment, reservation deposit, ticket, order, or subscription flow, publish transaction-specific terms, all mandatory charges, and cancellation/refund rules beside that flow.
 
-## Opening-updates email list
+## Opening-updates list
 
-- The homepage submits email, source, and a required `marketing_consent=yes` choice to Formspree. Check a test submission in Formspree after each deployment; do not add a test address to a real campaign.
+- The homepage sends names, email, optional interest/message, and separate `email_consent` and `sms_consent` values to the server-side GHL webhook. A mobile number is sent only for SMS opt-ins. Verify a test contact and both consent flags in GHL after each deployment; do not add a test address to a real campaign.
+- In GHL, branch email and SMS marketing enrollment on their matching `yes` consent flags. Check that `no` never enrolls a contact.
 - Do not send a marketing campaign until the sending tool has a functioning unsubscribe link, a suppression list, and DM Plaza's valid postal address in the email template. Test opt-out end to end before the first send.
-- Remove an address from Formspree and the sending tool when the person opts out or requests deletion, subject to any narrow record needed to prevent re-sending. Do not reimport suppressed addresses.
+- Remove a contact from GHL when the person opts out or requests deletion, subject to any narrow record needed to prevent re-sending. Do not reimport suppressed contacts.
 
 ## Privacy and applicant-data requests
 

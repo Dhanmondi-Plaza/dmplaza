@@ -325,15 +325,22 @@
   .notify-inner{max-width:560px;margin:0 auto;text-align:center}
   .notify-inner h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
   .notify-inner p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.8;margin-bottom:28px}
-  .nform{max-width:400px;margin:0 auto;width:100%}
-  .nform-row{display:flex;border:1px solid var(--border);border-radius:2px;overflow:hidden}
-  .nform input[type="email"]{flex:1;border:none;outline:none;padding:14px 16px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--cream);background:var(--dark3)}
+  .nform{max-width:520px;margin:0 auto;width:100%;text-align:left}
+  .nform-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .nform-field{display:flex;flex-direction:column;gap:6px;color:var(--light);font-size:13px}
+  .nform-field input,.nform-field select,.nform-field textarea{width:100%;min-width:0;border:1px solid var(--border);border-radius:2px;padding:12px 14px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--cream);background:var(--dark3)}
+  .nform-field textarea{resize:vertical;min-height:78px}
+  .nform-wide{grid-column:1/-1}
+  .nform-submit{width:100%;margin-top:18px}
   .nform input::placeholder{color:var(--mid)}
   .nform button{background:var(--gold);color:var(--black);border:none;font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 20px;cursor:pointer;transition:background .2s;white-space:nowrap}
   .nform button:hover{background:var(--gold-light)}
   .notify-inner .nform-consent{display:flex;align-items:flex-start;gap:10px;margin-top:14px;text-align:left;color:var(--light);font-size:13px;line-height:1.5}
   .nform-consent input{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--gold)}
   .nform-consent a{color:var(--gold)}
+  .nform-note a{color:var(--gold)}
+  .nform-note{margin:12px 0 0!important;font-size:12px!important;line-height:1.5!important}
+  @media(max-width:520px){.nform-fields{grid-template-columns:1fr}}
   .nsuccess{display:none;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold);margin-top:14px}
   .nsuccess.show{display:block}
 
@@ -834,6 +841,39 @@ html:not([lang="en"]) body{overflow-wrap:anywhere}html[lang="bn"] body{font-fami
     'Opening date to be announced.':'开业日期将另行公布。',
     'I agree to receive DM Plaza opening and brand updates by email. I can ask to be removed at any time.':'我同意通过电子邮件接收 DM Plaza 开业及品牌动态。我可以随时申请取消订阅。'
   });
+  const signupText = {
+    bn: {
+      'First name *':'নামের প্রথম অংশ *','Last name':'নামের শেষ অংশ','Email address *':'ইমেইল ঠিকানা *',
+      'Mobile number (for text updates)':'মোবাইল নম্বর (এসএমএসের জন্য)','What interests you?':'আপনার আগ্রহ কী?',
+      'General updates':'সাধারণ আপডেট','Message (optional)':'বার্তা (ঐচ্ছিক)',
+      'Send me DM Plaza opening, brand, and event updates by email. I can unsubscribe at any time.':'ইমেইলে DM Plaza-র উদ্বোধন, ব্র্যান্ড ও অনুষ্ঠানের খবর পাঠান। আমি যেকোনো সময় সদস্যতা বাতিল করতে পারি।',
+      'Send me recurring DM Plaza opening, brand, and event updates by text. Message frequency varies; message and data rates may apply. Consent is optional and not a condition of purchase. Reply STOP to opt out or HELP for help.':'এসএমএসে DM Plaza-র উদ্বোধন, ব্র্যান্ড ও অনুষ্ঠানের নিয়মিত খবর পাঠান। বার্তার সংখ্যা পরিবর্তিত হতে পারে; বার্তা ও ডেটার খরচ প্রযোজ্য হতে পারে। সম্মতি ঐচ্ছিক এবং কেনাকাটার শর্ত নয়। বন্ধ করতে STOP বা সাহায্যের জন্য HELP লিখে উত্তর দিন।',
+      'Choose at least one update channel. Read our':'অন্তত একটি যোগাযোগের মাধ্যম বেছে নিন। পড়ুন আমাদের',
+      'privacy notice':'গোপনীয়তা বিজ্ঞপ্তি','Choose email or text updates to continue.':'চালিয়ে যেতে ইমেইল বা এসএমএস আপডেট বেছে নিন।',
+      "Thanks! We'll keep you posted through your chosen channel.":'ধন্যবাদ! আপনার বেছে নেওয়া মাধ্যমে আমরা খবর জানাব।'
+    },
+    es: {
+      'First name *':'Nombre *','Last name':'Apellido','Email address *':'Correo electrónico *',
+      'Mobile number (for text updates)':'Número de celular (para mensajes)','What interests you?':'¿Qué te interesa?',
+      'General updates':'Noticias generales','Message (optional)':'Mensaje (opcional)',
+      'Send me DM Plaza opening, brand, and event updates by email. I can unsubscribe at any time.':'Envíenme por correo novedades de la apertura, las marcas y los eventos de DM Plaza. Puedo cancelar la suscripción en cualquier momento.',
+      'Send me recurring DM Plaza opening, brand, and event updates by text. Message frequency varies; message and data rates may apply. Consent is optional and not a condition of purchase. Reply STOP to opt out or HELP for help.':'Envíenme por mensaje de texto novedades periódicas de la apertura, las marcas y los eventos de DM Plaza. La frecuencia varía; pueden aplicarse cargos por mensajes y datos. El consentimiento es opcional y no condiciona ninguna compra. Responde STOP para cancelar o HELP para obtener ayuda.',
+      'Choose at least one update channel. Read our':'Elige al menos un canal de noticias. Lee nuestro',
+      'privacy notice':'aviso de privacidad','Choose email or text updates to continue.':'Elige correo o mensajes de texto para continuar.',
+      "Thanks! We'll keep you posted through your chosen channel.":'¡Gracias! Te informaremos por el canal que elegiste.'
+    },
+    'zh-CN': {
+      'First name *':'名 *','Last name':'姓','Email address *':'电子邮箱 *',
+      'Mobile number (for text updates)':'手机号码（用于短信更新）','What interests you?':'您对什么感兴趣？',
+      'General updates':'一般动态','Message (optional)':'留言（选填）',
+      'Send me DM Plaza opening, brand, and event updates by email. I can unsubscribe at any time.':'通过电子邮件向我发送 DM Plaza 开业、品牌和活动动态。我可以随时取消订阅。',
+      'Send me recurring DM Plaza opening, brand, and event updates by text. Message frequency varies; message and data rates may apply. Consent is optional and not a condition of purchase. Reply STOP to opt out or HELP for help.':'通过短信定期向我发送 DM Plaza 开业、品牌和活动动态。发送频率可能变化；短信和数据费用可能适用。同意接收短信是自愿的，并非购买条件。回复 STOP 可退订，回复 HELP 可获取帮助。',
+      'Choose at least one update channel. Read our':'请至少选择一种接收方式。阅读我们的',
+      'privacy notice':'隐私声明','Choose email or text updates to continue.':'请选择电子邮件或短信更新以继续。',
+      "Thanks! We'll keep you posted through your chosen channel.":'谢谢！我们将通过您选择的方式向您发送动态。'
+    }
+  };
+  for (const [lang,entries] of Object.entries(signupText)) Object.assign(window.SITE_TRANSLATIONS[lang],entries);
   const allowed = ['en','bn','es','zh-CN'];
   let saved = 'en';
   try { saved = localStorage.getItem('dm-language') || 'en'; } catch {}
@@ -1494,31 +1534,26 @@ html:not([lang="en"]) body{overflow-wrap:anywhere}html[lang="bn"] body{font-fami
       <div class="section-eyebrow" style="justify-content:center;">Stay connected</div>
       <h2>Opening date to be announced.<br><em>Be the first to know.</em></h2>
       <p>Get notified when DM Plaza opens — and stay updated on each business, events, and what's happening on Hillside Avenue.</p>
-     <label class="email-label" for="dm-email">Email address</label>
      <form
-  action="https://formspree.io/f/xaqkjzkq"
+  action="/api/homepage"
   method="POST"
   class="nform"
 >
-  <div class="nform-row">
-  <input
-    type="email"
-    name="email"
-    id="dm-email"
-    autocomplete="email"
-    aria-describedby="dm-error"
-    placeholder="your@email.com"
-    required
-  >
-
-  <input type="hidden" name="source" value="DM Plaza Notify Section">
-
-  <button type="submit">Stay in touch</button>
+  <div class="nform-fields">
+    <label class="nform-field">First name *<input name="first_name" autocomplete="given-name" maxlength="80" required></label>
+    <label class="nform-field">Last name<input name="last_name" autocomplete="family-name" maxlength="80"></label>
+    <label class="nform-field nform-wide">Email address *<input type="email" name="email" id="dm-email" autocomplete="email" maxlength="254" required></label>
+    <label class="nform-field nform-wide">Mobile number (for text updates)<input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" disabled></label>
+    <label class="nform-field nform-wide">What interests you?<select name="interest"><option value="General updates">General updates</option><option value="Desi Dragon">Desi Dragon</option><option value="Pearl & Leaf">Pearl & Leaf</option><option value="Nature’s Bazaar">Nature’s Bazaar</option><option value="Meridian Hill">Meridian Hill</option><option value="Top Level Urgent Care">Top Level Urgent Care</option></select></label>
+    <label class="nform-field nform-wide">Message (optional)<textarea name="message" maxlength="1000" rows="2"></textarea></label>
   </div>
-  <label class="nform-consent"><input type="checkbox" name="marketing_consent" value="yes" required> <span>I agree to receive DM Plaza opening and brand updates by email. I can ask to be removed at any time. <a href="/privacy">Privacy notice</a></span></label>
+  <label class="nform-consent"><input type="checkbox" name="email_consent" value="yes"> <span>Send me DM Plaza opening, brand, and event updates by email. I can unsubscribe at any time.</span></label>
+  <label class="nform-consent"><input type="checkbox" name="sms_consent" value="yes"> <span>Send me recurring DM Plaza opening, brand, and event updates by text. Message frequency varies; message and data rates may apply. Consent is optional and not a condition of purchase. Reply STOP to opt out or HELP for help.</span></label>
+  <p class="nform-note">Choose at least one update channel. Read our <a href="/privacy">privacy notice</a>.</p>
+  <button type="submit" class="nform-submit">Stay in touch</button>
 </form>
       <p id="dm-error" class="form-error" role="alert"></p>
-      <div class="nsuccess" id="dm-success" role="status" tabindex="-1">You're on the list. We'll see you on Hillside Ave.</div>
+      <div class="nsuccess" id="dm-success" role="status" tabindex="-1">Thanks! We'll keep you posted through your chosen channel.</div>
       <p style="font-size:11px;font-weight:300;color:var(--mid);margin-top:12px;">For event inquiries: <a href="mailto:info@dhanmondiplaza.com" style="color:var(--gold);text-decoration:none;">info@dhanmondiplaza.com</a></p>
 
       <!-- Social follow row -->
@@ -1634,9 +1669,14 @@ html:not([lang="en"]) body{overflow-wrap:anywhere}html[lang="bn"] body{font-fami
   const error = document.getElementById('dm-error');
   const success = document.getElementById('dm-success');
   const button = form.querySelector('button');
+  const emailConsent = form.elements.email_consent;
+  const smsConsent = form.elements.sms_consent;
+  const phone = form.elements.phone;
+  smsConsent.addEventListener('change', () => { phone.disabled = !smsConsent.checked; phone.required = smsConsent.checked; if (!smsConsent.checked) phone.value = ''; });
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     if (button.disabled || !form.reportValidity()) return;
+    if (!emailConsent.checked && !smsConsent.checked) { error.textContent = siteT('Choose email or text updates to continue.'); return; }
     error.textContent = '';
     button.disabled = true;
     button.textContent = siteT("Sending\u2026");
@@ -1644,13 +1684,13 @@ html:not([lang="en"]) body{overflow-wrap:anywhere}html[lang="bn"] body{font-fami
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
+      const fields = Object.fromEntries(new FormData(form));
       const response = await fetch(form.action, {
-        method: 'POST', body: new FormData(form),
-        headers: { Accept: 'application/json' }, signal: controller.signal
+        method: 'POST', body: JSON.stringify({...fields,email_consent:emailConsent.checked?'yes':'no',sms_consent:smsConsent.checked?'yes':'no',page_url:location.href}),
+        headers: { 'Content-Type':'application/json', Accept: 'application/json' }, signal: controller.signal
       });
       if (!response.ok) throw new Error('Submission was not accepted');
       form.hidden = true;
-      document.querySelector('label[for="dm-email"]').hidden = true;
       success.classList.add('show');
       success.focus();
     } catch (e) {
