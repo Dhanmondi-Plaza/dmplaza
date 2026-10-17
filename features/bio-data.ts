@@ -7,6 +7,7 @@ export const text = {
   note: {en: 'We are building this experience now. Opening details and final offerings are still being confirmed.', bn: 'আমরা এই অভিজ্ঞতা তৈরি করছি। খোলার তথ্য ও চূড়ান্ত সেবা এখনও নিশ্চিত করা হচ্ছে।', es: 'Estamos preparando esta experiencia. La fecha de apertura y la oferta final aún no están confirmadas.', 'zh-CN': '我们正在筹备这一体验。开业时间和最终服务内容尚待确认。'},
   updates: {en: 'Get opening updates', bn: 'খোলার খবর পান', es: 'Recibe novedades de apertura', 'zh-CN': '获取开业消息'},
   explore: {en: 'Explore DM Plaza', bn: 'ডিএম প্লাজা দেখুন', es: 'Explora DM Plaza', 'zh-CN': '探索 DM Plaza'},
+  microsite: {en: 'Explore this brand', bn: 'এই ব্র্যান্ড সম্পর্কে জানুন', es: 'Explora esta marca', 'zh-CN': '了解这个品牌'},
   progress: {en: 'Follow the buildout', bn: 'নির্মাণের অগ্রগতি দেখুন', es: 'Sigue la construcción', 'zh-CN': '关注施工进展'},
   location: {en: 'Location and directions', bn: 'ঠিকানা ও যাতায়াত', es: 'Ubicación e indicaciones', 'zh-CN': '地址与路线'},
   careers: {en: 'Explore open roles', bn: 'খোলা পদগুলো দেখুন', es: 'Explora las vacantes', 'zh-CN': '查看招聘职位'},
@@ -30,7 +31,7 @@ export const brands = {
   'desi-dragon': {name: 'Desi Dragon', tag: {en: 'Bold flavors. Good company.', bn: 'সাহসী স্বাদ। দারুণ সঙ্গ।', es: 'Sabores intensos. Buena compañía.', 'zh-CN': '浓郁风味，欢聚时光。'}, links: ['updates', 'explore', 'instagram', 'careers'], image: true},
   'pearl-and-leaf': {name: 'Pearl & Leaf', tag: {en: 'Better drinks. Brighter days.', bn: 'দারুণ পানীয়। উজ্জ্বল দিন।', es: 'Mejores bebidas. Días más alegres.', 'zh-CN': '好饮品，亮生活。'}, links: ['updates', 'explore', 'instagram', 'careers'], image: true},
   'natures-bazaar': {name: 'Nature’s Bazaar', tag: {en: 'Fresh choices. Everyday discoveries.', bn: 'তাজা পছন্দ। প্রতিদিন নতুন কিছু।', es: 'Opciones frescas. Descubrimientos diarios.', 'zh-CN': '新鲜选择，每日发现。'}, links: ['updates', 'vendor', 'explore', 'instagram'], image: true},
-  'meridian-hill': {name: 'Meridian Hill', tag: {en: 'Celebrate. Connect. Belong.', bn: 'উদ্‌যাপন। মিলন। আপনজন।', es: 'Celebra. Conecta. Comparte.', 'zh-CN': '庆祝。相聚。归属。'}, links: ['event', 'updates', 'progress', 'location'], image: true},
+  'meridian-hill': {name: 'Meridian Hill', tag: {en: 'Celebrate. Connect. Belong.', bn: 'উদ্‌যাপন। মিলন। আপনজন।', es: 'Celebra. Conecta. Comparte.', 'zh-CN': '庆祝。相聚。归属。'}, links: ['event', 'explore', 'updates', 'progress', 'location'], image: true},
   'top-level-urgent-care': {name: 'Top Level Urgent Care', tag: {en: 'Care for our community.', bn: 'আমাদের সমাজের জন্য সেবা।', es: 'Atención para nuestra comunidad.', 'zh-CN': '关爱我们的社区。'}, links: ['updates', 'explore', 'location']},
 } satisfies Record<string, Brand>;
 

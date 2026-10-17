@@ -8,6 +8,7 @@ export default function BioPage({brandId, initialLanguage}: {brandId: BrandId; i
   const [language, setLanguage] = useState<Language>(initialLanguage);
   const brand = brands[brandId];
   const hasImage = 'image' in brand && brand.image;
+  const hasMicrosite = ['desi-dragon','pearl-and-leaf','natures-bazaar','meridian-hill'].includes(brandId);
   const t = (key: keyof typeof text) => text[key][language];
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function BioPage({brandId, initialLanguage}: {brandId: BrandId; i
         <p className="bio-intro">{t('note')}</p>
         {brandId==='top-level-urgent-care'&&<p className="bio-care">{t('care')}</p>}
         <nav className="bio-links" aria-label={brand.name}>
-          {brand.links.map((key, index) => <a key={key} className={index===0 ? 'bio-primary' : ''} href={linkUrls[key]}><span>{t(key)}</span><span aria-hidden="true">↗</span></a>)}
+          {brand.links.map((key, index) => <a key={key} className={index===0 ? 'bio-primary' : ''} href={key==='explore'&&hasMicrosite?`/${brandId}?lang=${language}`:linkUrls[key]}><span>{key==='explore'&&hasMicrosite?t('microsite'):t(key)}</span><span aria-hidden="true">↗</span></a>)}
         </nav>
         <footer className="bio-footer">
           {hasImage&&<p>{t('concept')}</p>}
