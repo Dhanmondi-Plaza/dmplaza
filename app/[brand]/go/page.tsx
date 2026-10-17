@@ -8,7 +8,7 @@ export async function generateMetadata({params}: {params: Promise<{brand: string
   const {brand} = await params;
   if (!brandIds.includes(brand as BrandId)) return {};
   const name = brands[brand as BrandId].name;
-  return {title: `${name} | DM Plaza`, description: `${name} is coming to DM Plaza in Jamaica, Queens. Follow opening updates and explore what's taking shape.`};
+  return {title: brand === 'dm-plaza' ? 'Dhanmondi Plaza | Links' : `${name} | DM Plaza`, description: `${name} is coming to DM Plaza in Jamaica, Queens. Follow opening updates and explore what's taking shape.`};
 }
 export default async function Page({params, searchParams}: {params: Promise<{brand: string}>; searchParams: Promise<{lang?: string}>}) {
   const [{brand}, {lang}] = await Promise.all([params, searchParams]);
