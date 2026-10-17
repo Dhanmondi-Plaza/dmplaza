@@ -1,13 +1,19 @@
 'use client';
 
 import {useEffect,useMemo,useState,type FormEvent} from 'react';
-import {createClient,type User} from '@supabase/supabase-js';
+import {createClient,type SupabaseClient,type User} from '@supabase/supabase-js';
 import './customer-account.css';
 
 const brands=['Desi Dragon','Pearl & Leaf','Nature’s Bazaar','Meridian Hill','Top-Level Urgent Care'] as const;
+let sharedClient:{url:string;keyValue:string;client:SupabaseClient}|undefined;
 
 export default function Account({url,keyValue}:{url:string;keyValue:string}){
-  const client=useMemo(()=>url&&keyValue?createClient(url,keyValue,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null,[url,keyValue]);
+  const client=useMemo(()=>{
+    if(!url||!keyValue)return null;
+    if(!sharedClient||sharedClient.url!==url||sharedClient.keyValue!==keyValue)
+      sharedClient={url,keyValue,client:createClient(url,keyValue,{auth:{persistSession:true,autoRefreshToken:true}})};
+    return sharedClient.client;
+  },[url,keyValue]);
   const [user,setUser]=useState<User|null>(null);
   const [email,setEmail]=useState('');
   const [code,setCode]=useState('');
