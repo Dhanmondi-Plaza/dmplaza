@@ -69,7 +69,7 @@ export default function Account({url,keyValue}:{url:string;keyValue:string}){
     if(!client)return;
     setBusy(true);const {error}=await client.auth.signOut();
     if(error)setMessage('Could not sign out. Please try again.');
-    else{setUser(null);setFavorites([]);setMessage('Signed out.')}setBusy(false);
+    else{setUser(null);setFavorites([]);setEmail('');setCode('');setCodeSent(false);setMessage('Signed out.')}setBusy(false);
   }
 
   return <main className="account-page"><div className="account-wrap">
