@@ -34,8 +34,8 @@ export default function BioPage({brandId, initialLanguage}: {brandId: BrandId; i
         </div>
       </nav>
       <header className={`bio-hero ${hasImage ? 'has-image' : ''}`} style={hasImage ? {backgroundImage: `linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.79)),url(/bio/${brandId}/hero.webp)`} : undefined}>
-        <img className="bio-logo" src={`/bio/${brandId}/logo.webp`} width="330" height="170" fetchPriority="high" alt={brandId==='dm-plaza' ? '' : `${brand.name} logo`}/>
-        <h1 className={brandId==='dm-plaza' ? 'bio-sr-only' : undefined}>{brandId==='dm-plaza' ? 'Dhanmondi Plaza' : brand.name}</h1><p className="bio-tag">{brand.tag[language]}</p><p className="bio-opening">{t('opening')}</p>
+        <img className="bio-logo" src={`/bio/${brandId}/logo.webp`} width="330" height="170" fetchPriority="high" alt=""/>
+        <h1 className="bio-sr-only">{brandId==='dm-plaza' ? 'Dhanmondi Plaza' : brand.name}</h1><p className="bio-tag">{brand.tag[language]}</p><p className="bio-opening">{t('opening')}</p>
       </header>
       <section id="bio-content" className="bio-content" aria-label={brand.name}>
         <p className="bio-intro">{t('note')}</p>
