@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import './microsite.css';
+import BazaarSignup from './BazaarSignup';
 
 const languages=['en','bn','es','zh-CN'] as const;
 type Language=typeof languages[number];
@@ -69,15 +70,17 @@ export default async function Page({params,searchParams}:{params:Promise<{brand:
   const id=brand as Brand,site=sites[id],locale=languages.includes(lang as Language)?lang as Language:'en';
   const c=site.copy[locale],l=labels[locale];
   const email=(subject:string)=>`mailto:info@dhanmondiplaza.com?subject=${encodeURIComponent(subject)}`;
-  const primary=email(site.emailSubject);
+  const bazaarSignupReady=id==='natures-bazaar'&&Boolean(process.env.GHL_NATURES_BAZAAR_WEBHOOK_URL);
+  const primary=bazaarSignupReady?'#opening-updates':email(site.emailSubject);
+  const primaryLabel=bazaarSignupReady?{en:'Get opening updates',bn:'খোলার খবর পান',es:'Recibe novedades de apertura','zh-CN':'获取开业消息'}[locale]:c.contact;
   const secondary=id==='meridian-hill'?email('Meridian Hill vendor partnership'):id==='natures-bazaar'?email('Natures Bazaar vendor partnership'):'/careers';
   return <main className={`microsite microsite--${id}`} lang={locale}>
     <a className="microsite-skip" href="#content">Skip to content</a>
     <div className="microsite-parent"><a href="/"><img src="/bio/dm-plaza/logo.webp" alt="DM Plaza"/>{l.parent}</a></div>
     <header className="microsite-header"><a className="microsite-brand" href={`/${id}`} aria-label={`${site.name} home`}><img src={`/bio/${id}/logo.webp`} alt={site.name}/></a><nav aria-label="Page links"><a href="/careers">{l.careers}</a><a href="/">{l.home}</a><details><summary aria-label="Language">{locale==='en'?'EN':locale==='bn'?'বাংলা':locale==='es'?'ES':'中文'}</summary><div className="microsite-languages">{languages.map(code=><a key={code} href={`/${id}?lang=${code}`} lang={code} aria-current={locale===code?'page':undefined}>{code==='en'?'English':code==='bn'?'বাংলা':code==='es'?'Español':'中文'}</a>)}</div></details></nav></header>
-    <div id="content"><section className="microsite-hero"><div className="microsite-hero-copy"><p className="microsite-eyebrow">{l.coming}</p><h1>{c.headline}</h1><p className="microsite-intro">{c.intro}</p><div className="microsite-actions"><a className="microsite-button" href={primary}>{c.contact} <span aria-hidden="true">↗</span></a><a className="microsite-outline" href={secondary}>{c.secondary} <span aria-hidden="true">↗</span></a></div></div><figure><img src={`/bio/${id}/hero.webp`} alt=""/><figcaption>{l.concept}</figcaption></figure></section>
+    <div id="content"><section className="microsite-hero"><div className="microsite-hero-copy"><p className="microsite-eyebrow">{l.coming}</p><h1>{c.headline}</h1><p className="microsite-intro">{c.intro}</p><div className="microsite-actions"><a className="microsite-button" href={primary}>{primaryLabel} <span aria-hidden="true">↗</span></a><a className="microsite-outline" href={secondary}>{c.secondary} <span aria-hidden="true">↗</span></a></div></div><figure><img src={`/bio/${id}/hero.webp`} alt=""/><figcaption>{l.concept}</figcaption></figure></section>
     <section className="microsite-section microsite-offers"><div><p className="microsite-eyebrow">{l.planned}</p><h2>{c.offerTitle}</h2></div><ul>{c.offers.map(item=><li key={item}>{item}</li>)}</ul></section>
-    <section className="microsite-section microsite-status"><div><p className="microsite-eyebrow">{l.coming}</p><h2>{c.statusTitle}</h2></div><div><p>{c.status}</p>{id==='meridian-hill'&&<p className="microsite-capacity">{locale==='en'?'Working capacity: approximately 120 guests per floor; approximately 240 across both floors. Final occupancy depends on the completed layout and approvals.':locale==='bn'?'প্রাথমিক ধারণক্ষমতা: প্রতি তলায় প্রায় ১২০ জন, দুই তলায় প্রায় ২৪০ জন। চূড়ান্ত সংখ্যা সম্পূর্ণ বিন্যাস ও অনুমোদনের ওপর নির্ভর করবে।':locale==='es'?'Capacidad preliminar: aproximadamente 120 invitados por piso y 240 entre ambos pisos. La ocupación final depende de la distribución terminada y las aprobaciones.':'初步容量：每层约 120 位宾客，两层合计约 240 位。最终人数取决于完工布局与审批。'}</p>}<p className="microsite-muted">{l.more}</p></div></section></div>
+    <section className="microsite-section microsite-status"><div><p className="microsite-eyebrow">{l.coming}</p><h2>{c.statusTitle}</h2></div><div><p>{c.status}</p>{id==='meridian-hill'&&<p className="microsite-capacity">{locale==='en'?'Working capacity: approximately 120 guests per floor; approximately 240 across both floors. Final occupancy depends on the completed layout and approvals.':locale==='bn'?'প্রাথমিক ধারণক্ষমতা: প্রতি তলায় প্রায় ১২০ জন, দুই তলায় প্রায় ২৪০ জন। চূড়ান্ত সংখ্যা সম্পূর্ণ বিন্যাস ও অনুমোদনের ওপর নির্ভর করবে।':locale==='es'?'Capacidad preliminar: aproximadamente 120 invitados por piso y 240 entre ambos pisos. La ocupación final depende de la distribución terminada y las aprobaciones.':'初步容量：每层约 120 位宾客，两层合计约 240 位。最终人数取决于完工布局与审批。'}</p>}<p className="microsite-muted">{l.more}</p></div></section>{bazaarSignupReady&&<BazaarSignup lang={locale}/>}</div>
     <footer className="microsite-footer"><strong>{site.name}</strong><a href="/">DM Plaza</a><a href="/privacy">Privacy</a><a href="/careers">{l.careers}</a></footer>
   </main>;
 }
