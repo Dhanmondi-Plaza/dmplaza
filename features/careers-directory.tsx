@@ -24,12 +24,12 @@ function department(job:Job){
   const team=(job.team||'').toLowerCase();
   const title=job.title.toLowerCase();
   if(team.includes('assessment')||job.employment_type.toLowerCase().includes('contract'))return 'Contract / Specialized';
-  if(title.includes('executive chef')||team.includes('leadership'))return 'Leadership';
+  if(title.includes('executive chef')||title.includes('general manager')||team.includes('leadership'))return 'Leadership';
   if(team.includes('beverage')||title.includes('barista'))return 'Beverage';
   if(team.includes('marketing')||team.includes('community'))return 'Marketing';
   if(team.includes('facilities')||team.includes('maintenance'))return 'Facilities';
-  if(team.includes('kitchen')||team.includes('culinary'))return 'Kitchen';
-  return job.team||'Other';
+  if(title.includes('sous chef')||team.includes('kitchen')||team.includes('culinary'))return 'Kitchen';
+  return team===canonicalBrand(job.brand).toLowerCase()?'Other':job.team||'Other';
 }
 const matchesEmployment=(job:Job,type:string)=>type==='all'||job.employment_type.toLowerCase().includes(type.toLowerCase());
 function departmentOptions(jobs:Job[],employment:string){
