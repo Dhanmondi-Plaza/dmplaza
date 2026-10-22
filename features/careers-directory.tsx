@@ -15,6 +15,7 @@ const brands=[
   {key:'Dhanmondi Plaza',label:'DM Plaza'},
 ] as const;
 const departments=['Leadership','Kitchen','Beverage','Marketing','Facilities','Contract / Specialized'] as const;
+const employmentTypes=['Full-time','Part-time','Contract','Seasonal'] as const;
 const canonicalBrand=(brand:string)=>brand==='DM Plaza'?'Dhanmondi Plaza':brand;
 const brandClass=(brand:string)=>canonicalBrand(brand)==='Dhanmondi Plaza'?'dm-plaza':brand==='Pearl & Leaf'?'pearl-and-leaf':brand==='Desi Dragon'?'desi-dragon':brand==='Nature’s Bazaar'?'natures-bazaar':'meridian-hill';
 const displayBrand=(brand:string)=>canonicalBrand(brand)==='Dhanmondi Plaza'?'DM Plaza':brand;
@@ -30,6 +31,21 @@ function department(job:Job){
   if(team.includes('kitchen')||team.includes('culinary'))return 'Kitchen';
   return job.team||'Other';
 }
+const matchesEmployment=(job:Job,type:string)=>type==='all'||job.employment_type.toLowerCase().includes(type.toLowerCase());
+function departmentOptions(jobs:Job[],employment:string){
+  const available=new Set(jobs.filter(job=>matchesEmployment(job,employment)).map(department));
+  return [...departments.filter(value=>available.delete(value)),...Array.from(available).sort()];
+}
+function employmentOptions(jobs:Job[],selectedDepartment:string){
+  const matching=jobs.filter(job=>selectedDepartment==='all'||department(job)===selectedDepartment);
+  return employmentTypes.filter(type=>matching.some(job=>matchesEmployment(job,type)));
+}
+function validFilters(filters:Filters,jobs:Job[]):Filters{
+  const brandJobs=jobs.filter(job=>filters.brand==='all'||canonicalBrand(job.brand)===filters.brand);
+  const selectedDepartment=departmentOptions(brandJobs,'all').includes(filters.department)?filters.department:'all';
+  const selectedEmployment=employmentOptions(brandJobs,selectedDepartment).some(type=>type===filters.employment)?filters.employment:'all';
+  return {...filters,department:selectedDepartment,employment:selectedEmployment};
+}
 function pay(job:Job){
   const value=job.compensation||'';
   const amount=value.match(/\$\s*([\d,]+)/);
@@ -44,8 +60,8 @@ function readFilters(){
   const sort=query.get('sort')||'priority';
   return {
     brand:brands.some(item=>item.key===brand)?brand:'all',
-    department:departments.some(item=>item===department)?department:'all',
-    employment:['all','Full-time','Part-time','Contract'].includes(employment)?employment:'all',
+    department,
+    employment:employmentTypes.some(item=>item===employment)?employment:'all',
     sort:['priority','title','pay'].includes(sort)?sort:'priority',
   };
 }
@@ -57,12 +73,15 @@ export function CareersList({jobs,preview,accepting}:{jobs:Job[];preview:boolean
   const tabRefs=useRef<Array<HTMLButtonElement|null>>([]);
   const activeJobs=jobs.filter(job=>job.visibility==='published'||preview);
   const brandCount=(brand:string)=>brand==='all'?activeJobs.length:activeJobs.filter(job=>canonicalBrand(job.brand)===brand).length;
+  const brandJobs=activeJobs.filter(job=>filters.brand==='all'||canonicalBrand(job.brand)===filters.brand);
+  const availableDepartments=departmentOptions(brandJobs,filters.employment);
+  const availableEmployment=employmentOptions(brandJobs,filters.department);
   const hiringBrands=new Set(activeJobs.map(job=>canonicalBrand(job.brand))).size;
   const featured=activeJobs.filter(job=>job.is_featured).sort((a,b)=>priority(a)-priority(b)).slice(0,3);
   const base=activeJobs.filter(job=>
     (filters.brand==='all'||canonicalBrand(job.brand)===filters.brand)&&
     (filters.department==='all'||department(job)===filters.department)&&
-    (filters.employment==='all'||job.employment_type.toLowerCase().includes(filters.employment.toLowerCase()))
+    matchesEmployment(job,filters.employment)
   );
   const units=base.map(pay);
   const canSortPay=base.length>0&&units.every(Boolean)&&new Set(units.map(item=>item?.unit)).size===1;
@@ -76,12 +95,12 @@ export function CareersList({jobs,preview,accepting}:{jobs:Job[];preview:boolean
   const hasFilters=filters.brand!=='all'||filters.department!=='all'||filters.employment!=='all'||filters.sort!=='priority';
 
   useEffect(()=>{
-    setFilters(readFilters());
+    setFilters(validFilters(readFilters(),activeJobs));
     setReady(true);
     const query=new URLSearchParams(window.location.search);
     for(const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'])
       if(query.has(key))sessionStorage.setItem('careers:'+key,(query.get(key)||'').slice(0,500));
-    const onPop=()=>setFilters(readFilters());
+    const onPop=()=>setFilters(validFilters(readFilters(),activeJobs));
     window.addEventListener('popstate',onPop);
     return ()=>window.removeEventListener('popstate',onPop);
   },[]);
@@ -96,7 +115,13 @@ export function CareersList({jobs,preview,accepting}:{jobs:Job[];preview:boolean
   useEffect(()=>{
     if(filters.sort==='pay'&&!canSortPay)setFilters(current=>({...current,sort:'priority'}));
   },[filters.sort,canSortPay]);
-  const update=(key:keyof Filters,value:string)=>setFilters(current=>({...current,[key]:value}));
+  const update=(key:keyof Filters,value:string)=>setFilters(current=>{
+    const next={...current,[key]:value};
+    if(key==='brand')return {...next,department:'all',employment:'all'};
+    if(key==='department'&&next.employment!=='all'&&!employmentOptions(brandJobs,value).some(type=>type===next.employment))next.employment='all';
+    if(key==='employment'&&next.department!=='all'&&!departmentOptions(brandJobs,value).includes(next.department))next.department='all';
+    return next;
+  });
   const onTabKey=(event:KeyboardEvent<HTMLButtonElement>,index:number)=>{
     let next=index;
     if(event.key==='ArrowRight')next=(index+1)%brands.length;
@@ -136,8 +161,8 @@ export function CareersList({jobs,preview,accepting}:{jobs:Job[];preview:boolean
       </div></div>
       <div id="careers-results" role="tabpanel" aria-labelledby={'brand-tab-'+selectedIndex} tabIndex={0}>
         <div className="directory-controls">
-          <label>Department<select value={filters.department} onChange={event=>update('department',event.target.value)}><option value="all">All Departments</option>{departments.map(value=><option key={value}>{value}</option>)}</select></label>
-          <label>Employment type<select value={filters.employment} onChange={event=>update('employment',event.target.value)}><option value="all">All Types</option><option>Full-time</option><option>Part-time</option><option>Contract</option></select></label>
+          <label>Department<select value={filters.department} onChange={event=>update('department',event.target.value)}><option value="all">All Departments</option>{availableDepartments.map(value=><option key={value}>{value}</option>)}</select></label>
+          <label>Employment type<select value={filters.employment} onChange={event=>update('employment',event.target.value)}><option value="all">All Types</option>{availableEmployment.map(value=><option key={value}>{value}</option>)}</select></label>
           <label>Sort by<select value={filters.sort} onChange={event=>update('sort',event.target.value)}><option value="priority">Hiring Priority</option><option value="title">Job Title A–Z</option><option value="pay" disabled={!canSortPay}>Compensation: high to low{canSortPay?'':' (mixed pay types)'}</option></select></label>
         </div>
         <div className="results-toolbar"><p aria-live="polite" aria-atomic="true"><strong>{results.length}</strong> matching {results.length===1?'position':'positions'}</p>{hasFilters&&<button type="button" className="directory-reset" onClick={()=>setFilters(defaults)}>Reset Filters</button>}</div>
