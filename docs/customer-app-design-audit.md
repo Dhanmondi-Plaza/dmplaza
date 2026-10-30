@@ -9,8 +9,8 @@ Scores are heuristic review scores, not usability-study results. **1** means the
 | Explore | 7 | 7 | 7 | 7 | 6 | 7 | 5 | 6 | 7 | 7 |
 | Activity | 7 | 7 | 7 | 7 | 6 | 7 | 4 | 6 | 7 | 7 |
 | Account | 6 | 6 | 7 | 7 | 5 | 6 | 5 | 6 | 7 | 6 |
-| Pearl & Leaf preview | 7 | 7 | 8 | 7 | 6 | 7 | 4 | 6 | 7 | 7 |
-| Parking preview | 7 | 7 | 8 | 7 | 6 | 7 | 4 | 6 | 7 | 7 |
+| Pearl & Leaf preview | 8 | 7 | 8 | 8 | 7 | 7 | 4 | 6 | 7 | 8 |
+| Parking preview | 8 | 8 | 8 | 8 | 7 | 7 | 4 | 6 | 7 | 8 |
 
 ## Why the scores are bounded
 
@@ -18,8 +18,8 @@ Scores are heuristic review scores, not usability-study results. **1** means the
 - Explore keeps healthcare outside retail interests. Floor, hours, and contact data are not shown until verified.
 - Activity retains real QR tickets and honest empty states. Its value grows when actual orders and passes can be attached.
 - Account has working email OTP but needs a dedicated pass for profile editing, provider linking, sign-out feedback, and large-text layouts.
-- The two journey previews have legible steps, editable earlier inputs, visible disabled states, and no false purchase confirmation. Their current conversion scores are intentionally low because payment is inactive.
-- Motion uses short press and selection transitions, with `prefers-reduced-motion` support. Sheets, cart count motion, and confirmation motion are deferred until those functions exist.
+- The first preview pass made Pearl & Leaf and parking look like the same form. It also put the main task below the first mobile screen and left the app bottom navigation in the way. The revised Pearl & Leaf journey uses the approved brand asset, product photography, and a menu-first layout. Parking opens directly to date, arrival, and duration. Both now have compact progress, editable earlier inputs, visible disabled states, and no false purchase confirmation. Their conversion scores are intentionally low because payment is inactive.
+- Motion uses short step-entry, count-change, press, and selection feedback, with `prefers-reduced-motion` support. Sheets and confirmation motion are deferred until those functions exist.
 
 ## Design rules applied
 
@@ -29,4 +29,4 @@ Scores are heuristic review scores, not usability-study results. **1** means the
 
 ## Remaining design validation
 
-Test screen readers, keyboard-only journeys, 200% text zoom, slow network, authenticated ticket access, and real iOS/Android safe areas. Re-score after an approved menu and parking rules exist; do not infer checkout quality from the preview alone.
+The revised previews were checked in a browser at 320, 375, 390, 430, 768, and 1024 CSS pixels. Both sample journeys reached review, images loaded, and no page overflow or browser exceptions appeared. Test screen readers, keyboard-only journeys, 200% text zoom, slow network, authenticated ticket access, and real iOS/Android safe areas. Re-score after an approved menu and parking rules exist; do not infer checkout quality from the preview alone.
