@@ -18,7 +18,7 @@ Scores are heuristic review scores, not usability-study results. **1** means the
 - Explore keeps healthcare outside retail interests. Floor, hours, and contact data are not shown until verified.
 - Activity retains real QR tickets and honest empty states. Its value grows when actual orders and passes can be attached.
 - Account has working email OTP but needs a dedicated pass for profile editing, provider linking, sign-out feedback, and large-text layouts.
-- The first preview pass made Pearl & Leaf and parking look like the same form. It also put the main task below the first mobile screen and left the app bottom navigation in the way. The revised Pearl & Leaf journey uses the approved brand asset, product photography, and a menu-first layout. Parking opens directly to date, arrival, and duration. Both now have compact progress, editable earlier inputs, visible disabled states, and no false purchase confirmation. Their conversion scores are intentionally low because payment is inactive.
+- The first preview pass made Pearl & Leaf and parking look like the same form. It also put the main task below the first mobile screen and left the app bottom navigation in the way. The revised Pearl & Leaf journey uses the existing brand asset, product photography, and a menu-first layout. Parking opens directly to date, arrival, and duration. Both now have compact progress, editable earlier inputs, visible disabled states, and no false purchase confirmation. Their conversion scores are intentionally low because payment is inactive.
 - Motion uses short step-entry, count-change, press, and selection feedback, with `prefers-reduced-motion` support. Sheets and confirmation motion are deferred until those functions exist.
 
 ## Design rules applied
