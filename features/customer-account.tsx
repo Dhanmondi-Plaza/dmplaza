@@ -4,6 +4,7 @@ import {useEffect,useMemo,useState,type FormEvent} from 'react';
 import {useRouter} from 'next/navigation';
 import {type User} from '@supabase/supabase-js';
 import {customerClient} from './customer-supabase';
+import {CustomerNavigation,CustomerShellHeader} from './customer-shell';
 import './customer-account.css';
 
 const brands=['Desi Dragon','Pearl & Leaf','Nature’s Bazaar','Meridian Hill','Top-Level Urgent Care'] as const;
@@ -79,7 +80,7 @@ export default function Account({url,keyValue,next}:{url:string;keyValue:string;
   }
 
   return <main className="account-page"><div className="account-wrap">
-    <header className="account-header"><a href="/" aria-label="DM Plaza home"><img src="/brands/dm-plaza/logo.png" alt="DM Plaza"/></a></header>
+    <CustomerShellHeader/>
     <section className="account-card" aria-labelledby="account-title">
       <h1 id="account-title">{next?'Continue with DM Plaza':'Your account'}</h1>
       {loading?<p role="status">Loading your account…</p>:!client?<p role="alert">Accounts are temporarily unavailable. Please try again later.</p>:user?<>
@@ -97,5 +98,5 @@ export default function Account({url,keyValue,next}:{url:string;keyValue:string;
       </>}
       {message&&<p role="status" className="account-message">{message}</p>}
     </section><footer className="account-footer"><a href="/privacy">Privacy & cookies</a><a href="mailto:info@dhanmondiplaza.com">Account help</a></footer>
-  </div></main>
+  </div><CustomerNavigation active="account"/></main>
 }
