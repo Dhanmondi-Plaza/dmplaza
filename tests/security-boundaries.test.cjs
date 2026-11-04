@@ -12,6 +12,7 @@ test('public pages disable object embeds; careers and accounts also prevent fram
   assert.equal(config.poweredByHeader,false);
   const all=rules.find(r=>r.source==='/:path*');
   assert(all.headers.some(h=>h.key==='X-Content-Type-Options'&&h.value==='nosniff'));
+  assert(all.headers.some(h=>h.key==='X-Frame-Options'&&h.value==='DENY'));
   for(const source of ['/careers/:path*','/account/:path*']){
     const rule=rules.find(r=>r.source===source);
     assert(rule.headers.some(h=>h.key==='Content-Security-Policy'&&h.value.includes("frame-ancestors 'none'")));
