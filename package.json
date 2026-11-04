@@ -6,7 +6,8 @@
     "prebuild": "node scripts/prepare-home.mjs",
     "build": "next build",
     "start": "next start",
-    "dev": "next dev"
+    "dev": "next dev",
+    "test": "node --conditions=react-server --test tests/*.test.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.115.0",
