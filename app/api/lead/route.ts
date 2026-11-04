@@ -1,3 +1,4 @@
+import {reserveSignupRequest} from '../../../features/signup-rate-limit';
 import {readBoundedBody} from '../../../features/careers-validation';
 
 export async function POST(request:Request){
@@ -19,6 +20,8 @@ export async function POST(request:Request){
     let page:URL;
     try{page=new URL(field('page_url',500)||url.origin,url.origin)}catch{return Response.json({error:'Invalid page.'},{status:400})}
     if(page.origin!==url.origin||page.pathname!=='/natures-bazaar')return Response.json({error:'Invalid page.'},{status:400});
+    const limited=await reserveSignupRequest(request,'bazaar');
+    if(limited)return limited;
     const upstream=await fetch(webhook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
       first_name,last_name,email,phone:sms_consent==='yes'?phone:'',brand:'Nature’s Bazaar',form_name:'Opening Updates',
       email_consent,sms_consent,page_url:page.href
